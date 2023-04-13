@@ -8,13 +8,15 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { MechanicComponent } from './components/mechanic/mechanic.component';
+import { LoginHomeAdministrateComponent } from './components/login-home-administrate/login-home-administrate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    MechanicComponent
+    MechanicComponent,
+    LoginHomeAdministrateComponent
   ],
   imports: [
     BrowserModule,
