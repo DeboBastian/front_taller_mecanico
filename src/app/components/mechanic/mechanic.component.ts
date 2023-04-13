@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-mechanic',
+  selector: 'mechanic',
   templateUrl: './mechanic.component.html',
   styleUrls: ['./mechanic.component.css']
 })
