@@ -5,11 +5,13 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/users/login/login.component';
 import { MechanicComponent } from './components/mechanic/mechanic.component';
 import { AdministrationComponent } from './components/administration/administration.component';
+import { RegisterComponent } from './components/users/register/register.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/home" },
   { path: "home", component: HomeComponent },
   { path: "login", component: LoginComponent },
+  { path: "login/register", component: RegisterComponent },
   { path: "login/administration", component: AdministrationComponent},
   { path: "login/mechanic", component: MechanicComponent },
   { path: "**", redirectTo: "/home" },

@@ -25,7 +25,7 @@ export class LoginComponent {
     })
   }
 
-  async onSubmit() {
+  onSubmit() {
     console.log(this.formulary.value)
   }
 
