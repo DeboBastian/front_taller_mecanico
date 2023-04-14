@@ -1,0 +1,287 @@
+/* --GOOGLE FONTS-- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* font-family: 'Montserrat', sans-serif; */
+
+/* Globals */
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #F4F6FC;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+}
+
+/* Navigation */
+
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #BACBDB;
+    border-left: 10px solid #BACBDB;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation .active{
+    background-color: #F4F6FC;
+}
+
+.navigation ul li:hover{
+    background-color: #F4F6FC;
+}
+
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #333333;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon bxs-car-mechanic{
+    font-size: 1.75rem;
+}
+
+.navigation ul li a .icon bx-home-alt-2{
+    font-size: 1.75rem;
+}
+
+.navigation ul li a .tittle-company{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.navigation ul li a .tittle{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/* MAIN */
+
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #F4F6FC;
+    transition: 0.5s;
+}
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid #BACBDB;
+}
+
+.search label i{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+    color: #BACBDB;
+}
+
+/* REPARATIONS DETAILS */
+
+.details{
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    /* grid-template-columns: 2fr 1fr; */
+    grid-gap: 30px;
+    margin-top: 10px;
+}
+
+.details .recentOrders{
+    display: grid;
+    min-height: 500px;
+    background-color: #fff;
+    opacity: 0.9;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.details .cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+}
+
+.cardHeader h2{
+    display: inline;
+    font-weight: 600;
+    color: #333333;
+    text-transform: uppercase;
+}
+
+.cardHeader .btn{
+    position: relative;
+    padding: 5px 10px;
+    background: #BACBDB;
+    text-decoration: none;
+    color: #333333;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.menu{
+    font-weight: 600;
+}
+
+.details .recentOrders table tr{
+    color: #333333;
+    border-bottom: 1px solid grey;
+}
+
+.details .recentOrders table tr:last-child{
+    border-bottom: none;
+}
+
+/* .details .recentOrders table tr:hover{
+    background-color: #BACBDB;
+    color: #F4F6FC;
+} */
+
+.details .recentOrders table td{
+    padding: 10px;
+}
+
+.details .recentOrders table td:last-child{
+    text-align: start;
+}
+
+.details .recentOrders table td:last-child{
+    text-align: start;
+}
+
+.form-select{
+    position: relative;
+    width: 100%;
+    margin: 0 10px;
+}
+
+.form-select option{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid #BACBDB;
+}
+
+.status_pending{
+    padding: 2px 4px;
+    background-color: #FF6961;
+    color: #333333;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status_revised{
+    padding: 2px 4px;
+    background-color: #84B6F4;
+    color: #333333;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status_repaired{
+    padding: 2px 4px;
+    background-color: #81C3C9;
+    color: #333333;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
