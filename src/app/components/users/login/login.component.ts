@@ -19,16 +19,23 @@ export class LoginComponent {
   ) {
     this.formulary = new FormGroup({
       dni: new FormControl(null, [Validators.required]),
-      username: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
       
     })
   }
 
-  onSubmit() {
-    console.log(this.formulary.value)
-  }
 
+  async onSubmit() {
+
+    try {
+      const response = await this.usersService.login(this.formulary.value)
+      const { token } = response
+      localStorage.setItem('token_key', token)
+      this.router.navigate(['/home'])
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
 
 checkError(control: string, validator: string) {

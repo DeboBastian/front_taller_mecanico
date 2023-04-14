@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/home" },
   { path: "home", component: HomeComponent },
   { path: "login", component: LoginComponent },
-  { path: "login/register", component: RegisterComponent },
+  { path: "register", component: RegisterComponent },
   { path: "login/administration", component: AdministrationComponent},
   { path: "login/mechanic", component: MechanicComponent },
   { path: "**", redirectTo: "/home" },
