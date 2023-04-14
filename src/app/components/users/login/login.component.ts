@@ -31,7 +31,7 @@ export class LoginComponent {
       const response = await this.usersService.login(this.formulary.value)
       const { token } = response
       localStorage.setItem('token_key', token)
-      this.router.navigate(['/home'])
+      this.router.navigate(['/administration'])
     } catch (error) {
       console.log(error)
     }
