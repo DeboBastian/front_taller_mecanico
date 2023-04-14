@@ -1,0 +1,116 @@
+<!-- FAVICON -->
+<link rel="shortcut icon" href="./assets/img/favicon-s.png" type="image/x-icon">
+
+<!-- BOXICONS -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<!-- NAVIGATION -->
+<div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                <!-- <span class="icon"><i class='bx bxs-car-mechanic'></i></span> -->
+                <span class="tittle-company">ASPHALT CAR-MANAGER</span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="#">
+                <span class="icon"><i class='bx bx-home-alt-2'></i></span>
+                <span class="tittle">Dashboard</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+    <div class="topbar">
+        <div class="search">
+            <label for="">
+                <input type="text" placeholder="Search here">
+                <i class='bx bx-search-alt'></i>
+            </label>
+        </div>
+    </div>
+
+    <!-- REPARATIONS DETAILS -->
+
+    <div class="details">
+        <div class="recentOrders">
+            <div class="cardHeader">
+                <h2>Ordenes de Reparación</h2>
+                <a href="#" class="btn">View All</a>
+            </div>
+              
+            <table>
+                <thead>
+
+                    <tr class="menu">
+                        <td>Date</td>
+                        <td>Reparation</td>
+                        <td>Car</td>
+                        <td>Mechanic</td>
+                        <td>Type</td>
+                        <td>Price</td>
+                        <td>Status</td>
+                    </tr>
+    
+                    <tr>
+                        <td>Date</td>
+                        <td>Reparation</td>
+                        <td>Opel Astra</td>
+                        <td>Antonio Rodriguez</td>
+                        <td>Wheels</td>
+                        <td>200€</td>
+                        <select class="form-select" formControlName="status">
+                            <option value="">Status</option>
+                            <option value="pending" class="status_pending">Pending</option>
+                            <option value="revised" class="status_revised">Revised</option>
+                            <option value="repaired" class="status_repaired">Repaired</option>
+                        </select>
+                    </tr>
+    
+                    <tr>
+                        <td>Date</td>
+                        <td>Reparation</td>
+                        <td>Kia Sportage</td>
+                        <td>Antonio Rodriguez</td>
+                        <td>Mechanic</td>
+                        <td>100€</td>
+                        <select class="form-select" formControlName="status">
+                            <option value="">Status</option>
+                            <option value="pending" class="status_pending">Pending</option>
+                            <option value="revised" class="status_revised">Revised</option>
+                            <option value="repaired" class="status_repaired">Repaired</option>
+                        </select>
+                    </tr>
+    
+                    <tr>
+                        <td>Date</td>
+                        <td>Reparation</td>
+                        <td>MG Marvel R</td>
+                        <td>Daniel Frieros</td>
+                        <td>Wheels</td>
+                        <td>90€</td>
+                        <select class="form-select" formControlName="status">
+                            <option value="">Status</option>
+                            <option value="pending" class="status_pending">Pending</option>
+                            <option value="revised" class="status_revised">Revised</option>
+                            <option value="repaired" class="status_repaired">Repaired</option>
+                        </select>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div> 
+</div>
+
+
+
+
+
+
