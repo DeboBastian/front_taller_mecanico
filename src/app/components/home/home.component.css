@@ -1,0 +1,38 @@
+.button:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+/*.button img {
+    width: 1000%;
+    height: 1000%;
+}
+
+.button p {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+body header div {
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: #212429;
+}
+
+.button-container {
+    margin-top: 0px;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #212429;
+    width: 100%;
+} */

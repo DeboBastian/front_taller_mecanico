@@ -1,0 +1,28 @@
+.navbar-collapse {
+    text-align: center;
+}
+
+.container-fluid a img {
+    width: 100px;
+    height: auto;
+}
+
+h1,
+a {
+    color: white;
+}
+
+.navbar-nav .nav-link:hover {
+    transform: scale(1.1);
+}
+
+/* @media (max-width: 600px) {
+    .navbar-brand h5 {
+        display: none;
+    }
+} */
+
+/* .navbar-brand img {
+    width: 50px;
+    height: 50px;
+} */
