@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'mechanic',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./mechanic.component.css']
 })
 export class MechanicComponent {
+
+
+  constructor() { }
+
+  
 
 }

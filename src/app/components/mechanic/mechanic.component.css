@@ -110,6 +110,32 @@ body{
     white-space: nowrap;
 }
 
+/* curve outside */
+
+.navigation ul li :hover a::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px #F4F6FC;
+    pointer-events: none;
+}
+
+.navigation ul li :hover a::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px #F4F6FC;
+    pointer-events: none;
+}
+
 /* MAIN */
 
 .main{
@@ -202,7 +228,7 @@ body{
     background: #BACBDB;
     text-decoration: none;
     color: #333333;
-    border-radius: 6px;
+    border-radius: 4px;
     font-size: 15px;
 }
 
@@ -245,13 +271,13 @@ body{
 .form-select{
     position: relative;
     width: 100%;
-    margin: 0 10px;
+    margin-top: 10px;
 }
 
 .form-select option{
     width: 100%;
     height: 40px;
-    border-radius: 40px;
+    border-radius: 20px;
     padding: 5px 20px;
     padding-left: 35px;
     font-size: 18px;
@@ -260,7 +286,6 @@ body{
 }
 
 .status_pending{
-    padding: 2px 4px;
     background-color: #FF6961;
     color: #333333;
     border-radius: 4px;
@@ -268,8 +293,15 @@ body{
     font-weight: 500;
 }
 
-.status_revised{
-    padding: 2px 4px;
+.status_repaired{
+    background-color: #81C3C9;
+    color: #333333;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status_in-progress{
     background-color: #84B6F4;
     color: #333333;
     border-radius: 4px;
@@ -277,11 +309,18 @@ body{
     font-weight: 500;
 }
 
-.status_repaired{
-    padding: 2px 4px;
-    background-color: #81C3C9;
+button{
+    padding: 5px 10px 5px;
+    background: #BACBDB;
+    text-decoration: none;
     color: #333333;
     border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
 }
+
+
+
+
