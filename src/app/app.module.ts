@@ -11,6 +11,9 @@ import { MechanicComponent } from './components/mechanic/mechanic.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { AdministrationComponent } from './components/administration/administration.component';
 import { ClientsComponent } from './components/clients/clients.component';
+import { NewCarComponent } from './components/administration/new-car/new-car.component';
+import { NewReparationComponent } from './components/administration/new-reparation/new-reparation.component';
+import { NewClientComponent } from './components/administration/new-client/new-client.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { ClientsComponent } from './components/clients/clients.component';
     MechanicComponent,
     AdministrationComponent,
     RegisterComponent,
-    ClientsComponent
+    ClientsComponent,
+    NewCarComponent,
+    NewReparationComponent,
+    NewClientComponent
   ],
   imports: [
     BrowserModule,

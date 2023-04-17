@@ -6,6 +6,9 @@ import { LoginComponent } from './components/users/login/login.component';
 import { MechanicComponent } from './components/mechanic/mechanic.component';
 import { AdministrationComponent } from './components/administration/administration.component';
 import { RegisterComponent } from './components/users/register/register.component';
+import { NewCarComponent } from './components/administration/new-car/new-car.component';
+import { NewReparationComponent } from './components/administration/new-reparation/new-reparation.component';
+import { NewClientComponent } from './components/administration/new-client/new-client.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/home" },
@@ -13,8 +16,11 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "administration", component: AdministrationComponent },
-  { path: "clients", component: AdministrationComponent },
+  { path: "administration/new", component: AdministrationComponent },
   { path: "mechanic", component: MechanicComponent },
+  { path: "cars", component: NewCarComponent },
+  { path: "reparations", component: NewReparationComponent },
+  { path: "clients", component: NewClientComponent },
   { path: "**", redirectTo: "/home" },
 ];
 

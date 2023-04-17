@@ -12,15 +12,14 @@ import { UsersService } from 'src/app/services/users.service';
 export class LoginComponent {
 
   formulary: FormGroup;
-  user: User | null;
+  user!: User;
 
   constructor(
     private usersService: UsersService,
-    private router: Router,
-  
+    private router: Router
 
   ) {
-    this.user = null
+    
     this.formulary = new FormGroup({
       dni: new FormControl,
         // (null, [Validators.required]),
@@ -36,13 +35,16 @@ export class LoginComponent {
     try {
       const response = await this.usersService.login(this.formulary.value)
       const { token } = response
+      console.log(token)
       localStorage.setItem('token_key', token)
-      
-        // if (this.user.role === 'mechanic') {
-        //   this.router.navigate(['/mechanic'])
-        // } else {
-        //   this.router.navigate(['/administration'])
-        // }
+      const tokenDecode = this.usersService.decodeToken()
+      console.log(tokenDecode)
+
+        if (tokenDecode.user_role === 'mechanic') {
+          this.router.navigate(['/mechanic'])
+        } else {
+          this.router.navigate(['/administration'])
+        }
       
       
     } catch (error) {
