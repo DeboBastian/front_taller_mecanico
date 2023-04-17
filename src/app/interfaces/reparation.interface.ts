@@ -5,4 +5,6 @@ export interface Reparation {
     reparation: string;
     price: string;
     bill_number?: string;
+    users_id?: number;
+    cars_id ?: number;
 }

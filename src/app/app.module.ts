@@ -10,10 +10,11 @@ import { HomeComponent } from './components/home/home.component';
 import { MechanicComponent } from './components/mechanic/mechanic.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { AdministrationComponent } from './components/administration/administration.component';
-import { ClientsComponent } from './components/clients/clients.component';
 import { NewCarComponent } from './components/administration/new-car/new-car.component';
 import { NewReparationComponent } from './components/administration/new-reparation/new-reparation.component';
 import { NewClientComponent } from './components/administration/new-client/new-client.component';
+import { CarsComponent } from './components/cars/cars.component';
+import { ReparationsComponent } from './components/reparations/reparations.component';
 
 
 @NgModule({
@@ -24,10 +25,11 @@ import { NewClientComponent } from './components/administration/new-client/new-c
     MechanicComponent,
     AdministrationComponent,
     RegisterComponent,
-    ClientsComponent,
     NewCarComponent,
     NewReparationComponent,
-    NewClientComponent
+    NewClientComponent,
+    CarsComponent,
+    ReparationsComponent
   ],
   imports: [
     BrowserModule,

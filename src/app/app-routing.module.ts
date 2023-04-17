@@ -1,3 +1,4 @@
+import { ReparationsComponent } from './components/reparations/reparations.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: "mechanic", component: MechanicComponent },
   { path: "cars", component: NewCarComponent },
   { path: "reparations", component: NewReparationComponent },
+  { path: "admin/reparations", component: ReparationsComponent},
   { path: "clients", component: NewClientComponent },
   { path: "**", redirectTo: "/home" },
 ];

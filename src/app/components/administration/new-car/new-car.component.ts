@@ -28,6 +28,7 @@ export class NewCarComponent {
       type: new FormControl,
       fuel: new FormControl,
       damages: new FormControl
+      // clients_id: new FormControl
     })
   }
 

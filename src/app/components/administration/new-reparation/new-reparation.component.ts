@@ -19,7 +19,9 @@ export class NewReparationComponent {
       status: new FormControl(),
       type: new FormControl(),
       reparation: new FormControl(),
-      price: new FormControl()
+      price: new FormControl(),
+      // users_id: new FormControl(),
+      // cars_id: new FormControl()
     })
   }
 

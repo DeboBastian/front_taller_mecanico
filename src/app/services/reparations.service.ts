@@ -22,4 +22,8 @@ export class ReparationsService {
     )
   }
 
+
+  getAll() {
+    return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
+  }
 }

@@ -3,7 +3,7 @@
         <div class="col-12 col-lg-8 offset-0 offset-lg-2">
 
             <form [formGroup]="formulary" (ngSubmit)="onSubmit()">
-
+                <h1> NEW REPARATION </h1>
                 <div class="form-group mb-3">
                     <label class="form-label">Status</label>
                     <select class="form-select" formControlName="status">
@@ -31,6 +31,14 @@
                     <label class="form-label">Price</label>
                     <input type="number" class="form-control" placeholder="Price" formControlName="price">
                 </div>
+                <!-- <div class="form-group mb-3">
+                    <label class="form-label">Employee</label>
+                    <input type="number" class="form-control" placeholder="User/Employee ID" formControlName="users_id">
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label">Car</label>
+                    <input type="number" class="form-control" placeholder="Car ID" formControlName="cars_id">
+                </div> -->
 
                 <button type="submit" class="btn btn bg-success">Submit</button>
             </form>

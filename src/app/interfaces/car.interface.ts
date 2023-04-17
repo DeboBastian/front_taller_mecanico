@@ -11,4 +11,5 @@ export interface Car {
     type: string;
     fuel: string;
     damages: string;
+    clients_id?: number;
 }
