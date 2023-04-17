@@ -30,12 +30,8 @@
 <div class="main">
     <div class="topbar">
         <div class="search">
-            <form search #searcher="ngForm">
-                <div>
-                    <input class="form-control" type="text" name="search" autocomplete="off" placeholder=" Search by vehicle or customer" >
-                    <button>SEARCH</button>
-                </div>
-            </form>
+            <input class="form-control" type="text" name="search" autocomplete="off" placeholder=" Search by vehicle or customer" (change)="onChange($event)">
+            <button>SEARCH</button>
         </div>
     </div>
 
