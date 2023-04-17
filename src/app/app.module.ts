@@ -11,6 +11,7 @@ import { MechanicComponent } from './components/mechanic/mechanic.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { AdministrationComponent } from './components/administration/administration.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdministrationComponent } from './components/administration/administrat
     MechanicComponent,
     NavbarComponent,
     AdministrationComponent,
-    RegisterComponent
+    RegisterComponent,
+    FooterComponent
   ],
 
   imports: [
