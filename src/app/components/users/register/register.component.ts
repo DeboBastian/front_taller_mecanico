@@ -58,10 +58,10 @@ export class RegisterComponent {
         Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$/)
       ]),
 
-      repeatpassword: new FormControl(null, [
-        Validators.required,
-        this.passwordValidator
-      ]),
+      // repeatpassword: new FormControl(null, [
+      //   Validators.required,
+      //   this.passwordValidator
+      // ]),
 
       role: new FormControl("", [
         Validators.required
@@ -115,6 +115,7 @@ export class RegisterComponent {
 
     try {
       const newUser = await this.usersService.register(this.formulary.value)
+      console.log(newUser)
       this.router.navigate(['/login'])
     } catch (error) {
       console.log(error)

@@ -8,70 +8,70 @@
                 <div class="form-group mb-3">
                     <label class="form-label">Name</label>
                     <input type="text" class="form-control" placeholder="Enter your name" formControlName="name">
-                    <p class="error" *ngIf="checkError('name', 'required')">
+                    <!-- <p class="error" *ngIf="checkError('name', 'required')">
                         This field is required.
-                    </p>
+                    </p> -->
                 </div>
                 <div class="form-group mb-3">
                     <label>Surname</label>
                     <input type="text" class="form-control" placeholder="Enter your surname" formControlName="surname">
-                    <p class="error" *ngIf="checkError('surname', 'required')">
+                    <!-- <p class="error" *ngIf="checkError('surname', 'required')">
                         This field is required.
-                    </p>
+                    </p> -->
                 </div>
                 <div class="form-group mb-3">
                     <label>Birthdate</label>
                     <input type="date" class="form-control" placeholder="Enter your birthdate"
                         formControlName="birthdate">
-                    <p class="error" *ngIf="checkError('birthdate', 'required')">
+                    <!-- <p class="error" *ngIf="checkError('birthdate', 'required')">
                         This field is required.
-                    </p>
+                    </p> -->
                 </div>
                 <div class="form-group mb-3">
                     <label>DNI</label>
                     <input type="text" class="form-control" placeholder="Enter your DNI" formControlName="dni">
-                    <p class="error" *ngIf="checkError('dni', 'required')">
+                    <!-- <p class="error" *ngIf="checkError('dni', 'required')">
                         This field is required.
-                    </p>
+                    </p> -->
                 </div>
                 <div class="form-group mb-3">
                     <label>Phone</label>
                     <input type="text" class="form-control" placeholder="Enter your surname" formControlName="phone">
-                    <p class="error" *ngIf="checkError('phone', 'required')">
+                    <!-- <p class="error" *ngIf="checkError('phone', 'required')">
                         This field is required.
-                    </p>
+                    </p> -->
                 </div>
                 <div class="form-group mb-3">
                     <label>Email</label>
                     <input type="email" class="form-control" placeholder="Enter your email" formControlName="email">
-                    <p class="error" *ngIf="checkError('email', 'required')">
+                    <!-- <p class="error" *ngIf="checkError('email', 'required')">
                         This field is required.
-                    </p>
+                    </p> -->
                 </div>
                 <div class="form-group mb-3">
                     <label>Username</label>
                     <input type="text" class="form-control" placeholder="Enter your username"
                         formControlName="username">
-                    <p class="error" *ngIf="checkError('username', 'required')">
+                    <!-- <p class="error" *ngIf="checkError('username', 'required')">
                         This field is required.
-                    </p>
+                    </p> -->
                 </div>
                 <div class="form-group mb-3">
                     <label>Password</label>
                     <input type="password" class="form-control" placeholder="Choose a password"
                         formControlName="password">
-                    <p class="error" *ngIf="checkError('password', 'required')">
+                    <!-- <p class="error" *ngIf="checkError('password', 'required')">
                         This field is required.
-                    </p>
+                    </p> -->
                 </div>
-                <div class="form-group mb-3">
+                <!-- <div class="form-group mb-3">
                     <label>Repeat your password</label>
                     <input type="password" class="form-control" placeholder="Enter your password"
                         formControlName="repeatpassword">
                     <p class="error" *ngIf="checkError('password', 'required')">
                         This field is required.
                     </p>
-                </div>
+                </div> -->
 
                 <label>What role are you?</label>
                 <select class="form-select form-group mb-3" formControlName="role">
@@ -80,11 +80,11 @@
                     <option value="admin">Admin</option>
                     <option value="mechanic">Mechanic</option>
                 </select>
-                <p class="error" *ngIf="checkError('role', 'required')">
+                <!-- <p class="error" *ngIf="checkError('role', 'required')">
                     This field is required.
-                </p>
+                </p> -->
 
-                <button type="submit" class="btn btn">Submit</button>
+                <button type="submit" class="btn btn bg bg-success">Submit</button>
             </form>
         </div>
     </div>

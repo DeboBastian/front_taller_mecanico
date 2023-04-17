@@ -1,3 +1,4 @@
+import { User } from './../../../interfaces/user.interface';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,14 +12,19 @@ import { UsersService } from 'src/app/services/users.service';
 export class LoginComponent {
 
   formulary: FormGroup;
-  
+  user: User | null;
 
   constructor(
     private usersService: UsersService,
-    private router: Router
+    private router: Router,
+  
+
   ) {
+    this.user = null
     this.formulary = new FormGroup({
-      dni: new FormControl(null, [Validators.required]),
+      dni: new FormControl,
+        // (null, [Validators.required]),
+      email: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
       
     })
@@ -31,7 +37,14 @@ export class LoginComponent {
       const response = await this.usersService.login(this.formulary.value)
       const { token } = response
       localStorage.setItem('token_key', token)
-      this.router.navigate(['/administration'])
+      
+        // if (this.user.role === 'mechanic') {
+        //   this.router.navigate(['/mechanic'])
+        // } else {
+        //   this.router.navigate(['/administration'])
+        // }
+      
+      
     } catch (error) {
       console.log(error)
     }

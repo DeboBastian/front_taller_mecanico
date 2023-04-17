@@ -1,0 +1,14 @@
+.sign{
+    margin-top: 90px;
+    font-size: 20px;
+}
+
+span{
+    color: lightcoral;
+    cursor: pointer;
+}
+
+button{
+    color: white;
+    cursor: pointer;
+}

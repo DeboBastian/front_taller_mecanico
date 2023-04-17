@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MechanicComponent } from './components/mechanic/mechanic.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { AdministrationComponent } from './components/administration/administration.component';
+import { ClientsComponent } from './components/clients/clients.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AdministrationComponent } from './components/administration/administrat
     HomeComponent,
     MechanicComponent,
     AdministrationComponent,
-    RegisterComponent
+    RegisterComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,
