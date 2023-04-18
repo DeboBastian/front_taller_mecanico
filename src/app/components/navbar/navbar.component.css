@@ -20,6 +20,12 @@ a {
     transform: scale(1.1);
 }
 
+.navbar-toggler {
+    /* color: rgb(255, 213, 0); */
+    color: white;
+    background-color: white;
+}
+
 /* @media (max-width: 600px) {
     .navbar-brand h5 {
         display: none;
