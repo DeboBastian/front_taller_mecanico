@@ -11,11 +11,13 @@ import { MechanicComponent } from './components/mechanic/mechanic.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { AdministrationComponent } from './components/administration/administration.component';
-import { ClientsComponent } from './components/clients/clients.component';
 import { NewCarComponent } from './components/administration/new-car/new-car.component';
 import { NewReparationComponent } from './components/administration/new-reparation/new-reparation.component';
 import { NewClientComponent } from './components/administration/new-client/new-client.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CarsComponent } from './components/cars/cars.component';
+import { ReparationsComponent } from './components/reparations/reparations.component';
+import { CardReparationComponent } from './components/card-reparation/card-reparation.component';
 
 
 @NgModule({
@@ -27,11 +29,13 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     AdministrationComponent,
     RegisterComponent,
-    ClientsComponent,
     NewCarComponent,
     NewReparationComponent,
     NewClientComponent,
     FooterComponent,
+    CarsComponent,
+    ReparationsComponent,
+    CardReparationComponent
   ],
 
   imports: [

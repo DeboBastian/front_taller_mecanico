@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
-import { __values } from 'tslib';
+
 
 
 @Injectable({
@@ -24,13 +24,20 @@ export class ClientsService {
         'Autorization': localStorage.getItem('token_clients')!
       })
     };
-
-    return firstValueFrom(
-      this.httpClient.get<any>(this.baseUrl, options)
-    );
-
-
   }
+
+  getAllClients() {
+    return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
+  }
+
+
+  // registerNewClient(body: any) {
+  //   return firstValueFrom(
+  //     this.httpClient.get<any>(this.baseUrl, options)
+  //   );
+  // }
+
+
   create(values: {
     id: string,
     name: string,
@@ -49,7 +56,7 @@ export class ClientsService {
     }
 
     return firstValueFrom(
-      this.httpClient.post(this.baseUrl, __values, options)
+      this.httpClient.post(this.baseUrl, values, options)
     );
 
   }

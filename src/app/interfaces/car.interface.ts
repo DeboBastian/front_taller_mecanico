@@ -1,5 +1,6 @@
 
 export interface Car {
+    id: number;
     chasis: string;
     registration: string;
     brand: number;
@@ -11,4 +12,5 @@ export interface Car {
     type: string;
     fuel: string;
     damages: string;
+    clients_id?: number;
 }

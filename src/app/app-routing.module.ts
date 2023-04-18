@@ -1,3 +1,4 @@
+import { ReparationsComponent } from './components/reparations/reparations.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,6 +10,7 @@ import { RegisterComponent } from './components/users/register/register.componen
 import { NewCarComponent } from './components/administration/new-car/new-car.component';
 import { NewReparationComponent } from './components/administration/new-reparation/new-reparation.component';
 import { NewClientComponent } from './components/administration/new-client/new-client.component';
+import { CardReparationComponent } from './components/card-reparation/card-reparation.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/home" },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: "mechanic", component: MechanicComponent },
   { path: "cars", component: NewCarComponent },
   { path: "reparations", component: NewReparationComponent },
+  { path: "admin/reparations", component: ReparationsComponent },
+  { path: "reparation/:id", component: CardReparationComponent},
   { path: "clients", component: NewClientComponent },
   { path: "**", redirectTo: "/home" },
 ];
