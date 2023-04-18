@@ -15,6 +15,7 @@ import { NewReparationComponent } from './components/administration/new-reparati
 import { NewClientComponent } from './components/administration/new-client/new-client.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { ReparationsComponent } from './components/reparations/reparations.component';
+import { CardReparationComponent } from './components/card-reparation/card-reparation.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ReparationsComponent } from './components/reparations/reparations.compo
     NewReparationComponent,
     NewClientComponent,
     CarsComponent,
-    ReparationsComponent
+    ReparationsComponent,
+    CardReparationComponent
   ],
   imports: [
     BrowserModule,

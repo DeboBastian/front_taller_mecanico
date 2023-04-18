@@ -1,12 +1,10 @@
 <div class="reparations">
-    <div *ngFor="let reparation of reparationsList">
+    <div class="reparation" [routerLink]="['/reparation', reparation.id]" *ngFor="let reparation of reparationsList">
         <!-- //<p>Arrival Date: {{reparation.date}}</p> -->
         <p>Status: {{reparation.status}}</p>
         <p>Bill number: {{reparation.bill_number}}</p>
         <p>User: {{reparation.users_id}}</p>
         <p>Car: {{reparation.cars_id}}</p>
-
+        <hr>
     </div>
-
-    <hr>
 </div>
