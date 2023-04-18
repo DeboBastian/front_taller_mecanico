@@ -1,8 +1,7 @@
-import { ReparationsService } from 'src/app/services/reparations.service';
-import { Reparation } from './../../interfaces/reparation.interface';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CurrencyPipe, DatePipe } from '@angular/common';
+import { Reparation } from 'src/app/interfaces/reparation.interface';
+import { ReparationsService } from 'src/app/services/reparations.service';
 
 @Component({
   selector: 'app-card-reparation',
@@ -19,7 +18,7 @@ export class CardReparationComponent {
   ) {
     this.reparation = {
       id: 0,
-      date: new Date(),
+      date: new Date,
       status: "",
       type: "",
       reparation: "",
@@ -34,7 +33,6 @@ export class CardReparationComponent {
     try {
       this.activatedRoute.params.subscribe(async data => {
         this.reparation = await this.reparationsService.getById(parseInt(data['id']));
-        console.log(data['id']);
       })
 
     } catch (error) {

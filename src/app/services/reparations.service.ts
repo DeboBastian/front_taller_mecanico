@@ -15,11 +15,6 @@ export class ReparationsService {
     this.baseUrl = 'http://localhost:3000/api/reparations'
   }
 
-  getAll() {
-    return firstValueFrom(
-      this.httpClient.get<any>(this.baseUrl)
-    );
-  }
 
   createReparation(body: any) {
     return firstValueFrom(

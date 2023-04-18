@@ -1,5 +1,7 @@
 <div class="clients">
-    <div class="client" *ngFor="let client of clients">
-        {{client.name}}
+    <div class="client" [routerLink]="['/clients', client.id]" *ngFor="let client of clients">
+        <h4>{{client.name}} {{client.surname}}</h4>
+        <p>Contact: {{client.email}} - {{client.phone}}</p>
+        <hr>
     </div>
 </div>

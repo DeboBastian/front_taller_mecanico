@@ -34,6 +34,7 @@ export class LoginComponent {
 
     try {
       const response = await this.usersService.login(this.formulary.value)
+      console.log(response)
       const { token } = response
       console.log(token)
       localStorage.setItem('token_key', token)

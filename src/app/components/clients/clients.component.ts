@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Client } from 'src/app/interfaces/client.interface';
 import { ClientsService } from 'src/app/services/clients.service';
 
 
@@ -9,16 +10,17 @@ import { ClientsService } from 'src/app/services/clients.service';
 })
 export class ClientsComponent {
 
-  clients: any[];
+  clients: Client[];
 
-  constructor(private ClientsService: ClientsService) {
+  constructor(
+    private clientsService: ClientsService
+  ) {
     this.clients = [];
   }
 
   async ngOnInit() {
-    const response = await this.ClientsService.getAll();
-    console.log(response);
-    this.clients = response;
+    const clients = await this.clientsService.getAllClients();
+    this.clients = clients;
   };
 
 }
