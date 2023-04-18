@@ -1,14 +1,53 @@
-.sign{
-    margin-top: 90px;
-    font-size: 20px;
+/* --GOOGLE FONTS-- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* font-family: 'Montserrat', sans-serif; */
+
+:root {
+    --dark: #16191C;
+    --dark-x: #1E2126; 
+    --light: #ffffff;
 }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: var(--light);
+}
+
+.text-light { color: var(--light); }
+.bg-dark { background-color: var(--dark); }
+.bg-dark-x { background-color: var(--dark-x); }
+
+.btn {
+    min-height: 3.125rem;
+    font-weight: 600;
+}
+
+.form-control {
+    min-height: 3.125rem;
+    line-height: initial;
+}
+.form-control:focus {
+    background-color: var(--dark-x);
+    outline: none;
+}
+
+img {width: 15%}
 
 span{
-    color: lightcoral;
+    color: #C6A931;
     cursor: pointer;
 }
 
-button{
-    color: white;
-    cursor: pointer;
+.btn{
+    background-color: #C6A931;
+    color: #16191C;
+    border: 1px solid #16191C;
+}
+
+.img-1 {
+    background-image: url('asphalt.jpg');
+    background-size: cover;
+    background-position: center;
 }

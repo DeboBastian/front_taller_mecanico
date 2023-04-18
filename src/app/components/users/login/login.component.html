@@ -1,40 +1,51 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12 col-lg-8 offset-0 offset-lg-2">
-
-            <div class="sign">
-                <p>I'm a new user'. Sign up <span routerLink="/register">here</span> </p>
+<section>
+    <div class="row g-0">
+        <div class="col-lg-7 d-none d-lg-block">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item img-1 min-vh-100 active">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-5 bg-dark d-flex flex-column align-items-end min-vh-100">
+            <div class="px-lg-5 pt-lg-4 pb-lg-3 p-4 mb-auto w-100">
+                <img src="logo.png" class="rounded mx-auto d-block" />
             </div>
+          <div class="sign" class="align-self-center w-100 px-lg-5 py-lg-4 p-4">   
+          </div>
+            <div class="align-self-center w-100 px-lg-5 py-lg-4 p-4">
+              <p class="font-weight-bold mb-4 text-center">I'm a new user. Sign up <span routerLink="/register">here</span> </p>
+            <h1 class="font-weight-bold mb-4 text-center">Welcome back</h1>
 
             <form [formGroup]="formulary" (ngSubmit)="onSubmit()">
 
-                <div class="form-group mb-3">
-                    <label class="form-label">DNI</label>
-                    <input type="text" class="form-control" placeholder="Enter your DNI" formControlName="dni">
-                    <!-- <p class="error" *ngIf="checkError('dni', 'required')">
-                        This field is required.
-                    </p> -->
+            <form class="mb-5">
+                <div class="mb-4">
+                  <label class="form-label font-weight-bold">Identification</label>
+                  <input type="email" class="form-control bg-dark-x border-0" placeholder="Enter your DNI" formControlName="dni">
+                <!-- <p class="error" *ngIf="checkError('dni', 'required')">
+                    This field is required.
+                </p> -->
                 </div>
 
-                <div class="form-group mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" placeholder="Enter your email" formControlName="email">
-                    <p class="error" *ngIf="checkError('email', 'required')">
-                        This field is required.
-                    </p>
+                <div class="mb-4">
+                  <label class="form-label font-weight-bold">Email</label>
+                  <input type="email" class="form-control bg-dark-x border-0" id="exampleInputEmail1" placeholder="Enter your email" formControlName="email">
+                  <p class="error" *ngIf="checkError('email', 'required')">
+                </p>
                 </div>
 
-                <div class="form-group mb-3">
-                    <label>Password</label>
-                    <input type="password" class="form-control" placeholder="Password" formControlName="password">
-                    <p class="error" *ngIf="checkError('password', 'required')">
-                        This field is required.
-                    </p>
+                <div class="mb-4">
+                  <label for="exampleInputPassword1" class="form-label font-weight-bold">Password</label>
+                  <input type="password" class="form-control bg-dark-x border-0 mb-2" placeholder="Enter your password" formControlName="password">
+                  <p class="error" *ngIf="checkError('password', 'required')">
                 </div>
-
-                <button type="submit" class="btn btn bg-success">Submit</button>
-            </form>
+                <button type="submit" class="btn btn-primary w-100" style="background-color: #C6A931;">Submit</button>
+              </form>
+            </div>
         </div>
     </div>
-
-</div>
+  </section>
