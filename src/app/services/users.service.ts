@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
-import jwtDecode from 'jwt-decode';
+import JwtDecode from 'jwt-decode';
 
 
 @Injectable({
@@ -37,6 +37,6 @@ export class UsersService {
 
 
   decodeToken() {
-    return jwtDecode<any>(localStorage.getItem('token_key')!)
+    return JwtDecode<any>(localStorage.getItem('token_key')!)
   }
 }
