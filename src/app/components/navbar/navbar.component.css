@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+.navbar {
+    background-color: #121111;
+}
+
 .container-fluid a img {
     width: 100px;
     height: auto;

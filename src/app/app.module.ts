@@ -13,6 +13,7 @@ import { RegisterComponent } from './components/users/register/register.componen
 import { AdministrationComponent } from './components/administration/administration.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     AdministrationComponent,
     RegisterComponent,
-    FooterComponent
+    FooterComponent,
   ],
 
   imports: [

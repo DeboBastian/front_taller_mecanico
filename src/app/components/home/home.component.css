@@ -1,81 +1,68 @@
+.title-container {
+    background-color: #121111;
+}
+
+
+.container {
+    text-align: center;
+}
+
+
+
 .button:hover {
     transform: scale(1.1);
+
 }
 
-h1 {
-    color: white;
-    text-align: center;
-    font-family: serif;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-h2 {
-    color: white;
-    text-align: center;
-    font-family: serif;
-}
+
+
 
 .image-container {
     position: relative;
 
 }
 
-.title-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.btn-login {
+    border-radius: 20px;
+    background-color: #023876;
     color: white;
-    padding: 10px;
-
-}
-
-.login-btn,
-.register-btn {
-    background-color: lightcyan;
-    border: none;
-    color: black;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    transition: box-shadow 1s;
+    margin: 30px 30px 30px 30px;
 }
 
-.login-btn:hover,
-.register-btn:hover {
-    background-color: lightcyan;
+.btn-login:hover {
+    box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
 
-
-/*.button img {
-    width: 1000%;
-    height: 1000%;
+.btn-signup {
+    border-radius: 20px;
+    background-color: #023876;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    transition: box-shadow 1s;
+    margin: 30px 30px 30px 30px;
 }
 
-.button p {
-    margin: 0;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
+.btn-signup:hover {
+    box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
-body header div {
-    font-family: "Lucida Console", "Courier New", monospace;
-    background-color: #212429;
-}
+.btn-lg {
+    font-size: 1.5rem;
 
-.button-container {
-    margin-top: 0px;
-}
+    padding: 12px 24px;
 
-.button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #212429;
-    width: 100%;
-} */
+}
