@@ -1,1 +1,7 @@
-<p>clients works!</p>
+<button (click)="OnClick()">Pulse</button>
+
+<div class="clients">
+    <div class="clients" *ngFor="let client of clients">
+        <h3>{{ client.name}}</h3>
+    </div>
+</div>
