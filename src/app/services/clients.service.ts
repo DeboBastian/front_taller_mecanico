@@ -24,10 +24,11 @@ export class ClientsService {
         'Autorization': localStorage.getItem('token_clients')!
       })
     };
+    return firstValueFrom<any[]>(this.httpClient.get<any>(this.baseUrl))
   }
 
   getAllClients() {
-    return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
+    return firstValueFrom<any[]>(this.httpClient.get<any>(this.baseUrl))
   }
 
 

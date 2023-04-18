@@ -11,6 +11,7 @@ import { NewCarComponent } from './components/administration/new-car/new-car.com
 import { NewReparationComponent } from './components/administration/new-reparation/new-reparation.component';
 import { NewClientComponent } from './components/administration/new-client/new-client.component';
 import { CardReparationComponent } from './components/card-reparation/card-reparation.component';
+import { ClientsComponent } from './components/clients/clients.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/home" },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: "reparations", component: NewReparationComponent },
   { path: "admin/reparations", component: ReparationsComponent },
   { path: "reparation/:id", component: CardReparationComponent},
-  { path: "clients", component: NewClientComponent },
+  { path: "clients/new", component: NewClientComponent },
+  { path: "clients", component: ClientsComponent}
   { path: "**", redirectTo: "/home" },
 ];
 
