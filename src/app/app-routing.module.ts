@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: "admin/reparations", component: ReparationsComponent },
   { path: "reparation/:id", component: CardReparationComponent},
   { path: "clients/new", component: NewClientComponent },
-  { path: "clients", component: ClientsComponent}
+  { path: "clients", component: ClientsComponent},
   { path: "**", redirectTo: "/home" },
 ];
 
