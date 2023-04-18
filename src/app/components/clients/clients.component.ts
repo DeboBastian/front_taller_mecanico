@@ -17,6 +17,7 @@ export class ClientsComponent {
 
   async ngOnInit() {
     const response = await this.ClientsService.getAll();
+    console.log(response);
     this.clients = response;
   };
 

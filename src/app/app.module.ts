@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { ReparationsComponent } from './components/reparations/reparations.component';
 import { CardReparationComponent } from './components/card-reparation/card-reparation.component';
+import { ClientsComponent } from './components/clients/clients.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { CardReparationComponent } from './components/card-reparation/card-repar
     FooterComponent,
     CarsComponent,
     ReparationsComponent,
-    CardReparationComponent
+    CardReparationComponent,
+    ClientsComponent
   ],
 
   imports: [

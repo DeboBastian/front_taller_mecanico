@@ -19,11 +19,7 @@ export class ClientsService {
 
 
   getAll() {
-    const options = {
-      headers: new HttpHeaders({
-        'Autorization': localStorage.getItem('token_clients')!
-      })
-    };
+   
     return firstValueFrom<any[]>(this.httpClient.get<any>(this.baseUrl))
   }
 
@@ -32,35 +28,17 @@ export class ClientsService {
   }
 
 
-  // registerNewClient(body: any) {
-  //   return firstValueFrom(
-  //     this.httpClient.get<any>(this.baseUrl, options)
-  //   );
-  // }
-
-
-  create(values: {
-    id: string,
-    name: string,
-    surname: string,
-    dni: string,
-    email: string,
-    phone: string,
-    address: string,
-    card_number: string
-  }) {
-
+  registerNewClient(body: any) {
     const options = {
       headers: new HttpHeaders({
-        'Authorization': localStorage.getItem('token_clients')!
+        'Autorization': localStorage.getItem('token_clients')!
       })
-    }
-
+    };
     return firstValueFrom(
-      this.httpClient.post(this.baseUrl, values, options)
+      this.httpClient.post<any>(this.baseUrl, body, options)
     );
-
   }
+
 
 }
 
