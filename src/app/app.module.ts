@@ -8,12 +8,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/users/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { MechanicComponent } from './components/mechanic/mechanic.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { AdministrationComponent } from './components/administration/administration.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { NewCarComponent } from './components/administration/new-car/new-car.component';
 import { NewReparationComponent } from './components/administration/new-reparation/new-reparation.component';
 import { NewClientComponent } from './components/administration/new-client/new-client.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -22,13 +24,16 @@ import { NewClientComponent } from './components/administration/new-client/new-c
     LoginComponent,
     HomeComponent,
     MechanicComponent,
+    NavbarComponent,
     AdministrationComponent,
     RegisterComponent,
     ClientsComponent,
     NewCarComponent,
     NewReparationComponent,
-    NewClientComponent
+    NewClientComponent,
+    FooterComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
