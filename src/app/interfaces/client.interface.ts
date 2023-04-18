@@ -8,6 +8,6 @@ export interface Client {
     phone: string;
     dni: string;
     address: string;
-    card_number: number; //(que se ponia para que no fuera obligatorio en el form)
+    card_number?: number;
  
 }
