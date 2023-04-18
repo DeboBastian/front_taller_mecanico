@@ -25,7 +25,7 @@ export class ReparationsComponent {
   async ngOnInit() {
 
     try {
-      this.reparationsList = await this.reparationsService.getAll()
+      // this.reparationsList = await this.reparationsService.getAll()
     } catch (error) {
       console.log(error)
     }

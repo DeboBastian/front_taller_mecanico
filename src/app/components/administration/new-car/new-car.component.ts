@@ -1,5 +1,7 @@
+import { ClientsService } from 'src/app/services/clients.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Client } from 'src/app/interfaces/client.interface';
 import { CarsService } from 'src/app/services/cars.service';
 
 @Component({
@@ -10,12 +12,15 @@ import { CarsService } from 'src/app/services/cars.service';
 export class NewCarComponent {
 
   formulary: FormGroup;
+  clients: Client[];
 
   constructor(
 
-    private carsService: CarsService
+    private carsService: CarsService,
+    private clientsService: ClientsService
 
   ) {
+    this.clients = []
     this.formulary = new FormGroup({
       chasis: new FormControl,
       registration: new FormControl,
@@ -27,9 +32,18 @@ export class NewCarComponent {
       doors: new FormControl,
       type: new FormControl,
       fuel: new FormControl,
-      damages: new FormControl
-      // clients_id: new FormControl
+      damages: new FormControl,
+      clients_id: new FormControl
     })
+  }
+
+  async ngOnInit() {
+    try {
+      this.clients = await this.clientsService.getAllClients()
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 
 

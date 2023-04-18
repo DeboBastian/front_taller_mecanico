@@ -22,4 +22,8 @@ export class CarsService {
     )
   }
 
+  getAllCars() {
+    return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
+  }
+
 }

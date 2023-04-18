@@ -16,6 +16,12 @@ export class UsersService {
     this.baseUrl = 'http://localhost:3000/api/users'
   }
 
+
+  getAllUsers() {
+    return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
+  }
+
+
   register(body: any) {
     return firstValueFrom(
       this.httpClient.post<any>(`${this.baseUrl}/register`, body)

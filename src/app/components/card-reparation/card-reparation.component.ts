@@ -19,7 +19,7 @@ export class CardReparationComponent {
   ) {
     this.reparation = {
       id: 0,
-      //date: DatePipe,
+      date: new Date(),
       status: "",
       type: "",
       reparation: "",

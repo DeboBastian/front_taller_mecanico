@@ -16,6 +16,11 @@ export class ClientsService {
   }
 
 
+  getAllClients() {
+    return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
+  }
+
+
   registerNewClient(body: any) {
     return firstValueFrom(
       this.httpClient.post<any>(this.baseUrl, body)
