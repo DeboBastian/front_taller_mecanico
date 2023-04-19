@@ -12,12 +12,13 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    color: var(--light);
+    color: #ffffff;
+    background-color: #1E2126;
 }
 
-.text-light { color: var(--light); }
-.bg-dark { background-color: var(--dark); }
-.bg-dark-x { background-color: var(--dark-x); }
+span{
+    font-weight: bold;
+}
 
 .btn {
     min-height: 3.125rem;
@@ -25,29 +26,38 @@ body {
 }
 
 .form-control {
+    background-color: #16191C;
     min-height: 3.125rem;
     line-height: initial;
 }
+
 .form-control:focus {
-    background-color: var(--dark-x);
-    outline: none;
+    color: #ffffff;
 }
 
-img {width: 15%}
+img {width: 100%}
+
+#logo {width: 25%}
 
 span{
-    color: #C6A931;
+    color: #CE9529;
     cursor: pointer;
 }
 
 .btn{
-    background-color: #C6A931;
+    background-color: #CE9529;
+    color: #16191C;
+    border: 1px solid #16191C;
+}
+
+.btn:hover{
+    background-color: #E4C58C;
     color: #16191C;
     border: 1px solid #16191C;
 }
 
 .img-1 {
-    background-image: url('asphalt.jpg');
+    background-image: url('/assets/img/asphalt-01.jpg');
     background-size: cover;
     background-position: center;
 }

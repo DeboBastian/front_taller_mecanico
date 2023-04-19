@@ -1,7 +1,10 @@
-<button (click)="OnClick()">Pulse</button>
-
 <div class="clients">
-    <div class="clients" *ngFor="let client of clients">
-        <h3>{{ client.name}}</h3>
+    <div class="client" *ngFor="let client of clients">
+        <h2>{{client.name}} {{client.surname}}</h2>
+        <p>{{client.email}}</p>
+        <p>Contact: {{client.phone}}</p>
+        <p>DNI: {{client.dni}}</p>
+        <p>Address: {{client.address}}</p>
+        <p>Card Number: {{client.card_number}}</p>
     </div>
 </div>
