@@ -1,13 +1,25 @@
 <div class="container">
-    <p>Chasis: {{car.chasis}}</p>
-    <p>Registration Number: {{car.registration}}</p>
-    <p>Brand: {{car.brand}}</p>
-    <p>Model: {{car.model}}</p>
-    <p>Color: {{car.color}}
-    <p>KM: {{car.km}}</p>
-    <p>Year: {{car.year}}</p>
-    <p>Number of doors: {{car.doors}}</p>
-    <p>Type of car: {{car.type}}</p>
-    <p>Type of fuel: {{car.fuel}}</p>
-    <p>Damages: {{car.damages}}</p>
+    <div class="car">
+        <p>Chasis: {{car.chasis}}</p>
+        <p>Registration Number: {{car.registration}}</p>
+        <p>Brand: {{car.brand}}</p>
+        <p>Model: {{car.model}}</p>
+        <p>Color: {{car.color}}
+        <p>KM: {{car.km}}</p>
+        <p>Year: {{car.year}}</p>
+        <p>Number of doors: {{car.doors}}</p>
+        <p>Type of car: {{car.type}}</p>
+        <p>Type of fuel: {{car.fuel}}</p>
+        <p>Damages: {{car.damages}}</p>
+    </div>
+    <div class="client" *ngFor="let client of clients">
+        <h3>CLIENT OF THIS CAR</h3>
+        <h4>{{client.name}} {{client.surname}}</h4>
+        <p>Contact:</p>
+        <p>{{client.email}}</p>
+        <p>{{client.phone}}</p>
+        <p>DNI: {{client.dni}}</p>
+        <p>Address: {{client.address}}</p>
+        <p>Card number: {{client.card_number}}</p>
+    </div>
 </div>

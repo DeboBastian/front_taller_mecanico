@@ -1,5 +1,16 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+}
 
 p{
     color: white;
 }
 
+h4{
+    color: white;
+}
+
+h3{
+    color: white;
+}
