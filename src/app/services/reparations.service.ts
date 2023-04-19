@@ -29,7 +29,14 @@ export class ReparationsService {
   }
 
   
+
   getById(id: number) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`))
   }
+
+
+   getByUsers(id: number) {
+    return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/mechanic/${id}`))
+  }
+
 }

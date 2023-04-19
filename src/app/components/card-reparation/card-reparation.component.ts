@@ -39,4 +39,5 @@ export class CardReparationComponent {
       console.log(error)
     }
   }
+
 }
