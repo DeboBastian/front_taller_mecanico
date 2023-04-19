@@ -13,33 +13,26 @@ export class ClientsService {
   constructor(
     private httpClient: HttpClient
   ) {
-    this.baseUrl = 'http://localhost:3000/api/users'
+    this.baseUrl = 'http://localhost:3000/api/clients'
   }
 
 
 
-  getAll() {
-   
-    return firstValueFrom<any[]>(this.httpClient.get<any>(this.baseUrl))
-  }
-
+  
   getAllClients() {
     return firstValueFrom<any[]>(this.httpClient.get<any>(this.baseUrl))
   }
 
 
   registerNewClient(body: any) {
-    const options = {
-      headers: new HttpHeaders({
-        'Autorization': localStorage.getItem('token_clients')!
-      })
-    };
     return firstValueFrom(
-      this.httpClient.post<any>(this.baseUrl, body, options)
+      this.httpClient.post<any>(this.baseUrl, body)
     );
   }
 
-
+  getById(id: number) {
+    return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`))
+  }
 }
 
 

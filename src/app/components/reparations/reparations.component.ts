@@ -10,26 +10,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ReparationsComponent {
 
-  reparationsList: Reparation[]
-  reparation: any
+  reparations: Reparation[]
+ 
 
   constructor(
     private reparationsService: ReparationsService,
     private activatedRoute: ActivatedRoute
   ) {
-    this.reparationsList = []
-    this.reparation 
+    this.reparations = []
   }
+
 
 
   async ngOnInit() {
-
-    try {
-       this.reparationsList = await this.reparationsService.getAll()
-    } catch (error) {
-      console.log(error)
-    }
-
-  }
+    const reparations = await this.reparationsService.getAllReparations();
+    this.reparations = reparations;
+  };
 
 }

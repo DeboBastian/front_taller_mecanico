@@ -5,30 +5,22 @@ import { firstValueFrom } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ReparationsService {
+export class MechanicsService {
 
   private baseUrl: string;
-
   constructor(
     private httpClient: HttpClient
-  ) { 
-    this.baseUrl = 'http://localhost:3000/api/reparations'
+  ) {
+    this.baseUrl = 'http://localhost:3000/api/mechanics'
   }
 
 
-  createReparation(body: any) {
-    return firstValueFrom(
-      this.httpClient.post<any>(this.baseUrl, body)
-    )
 
-} 
-
-
-  getAllReparations() {
-    return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
+  getAllMechanics() {
+    return firstValueFrom<any[]>(this.httpClient.get<any>(this.baseUrl))
   }
 
-  
+
   getById(id: number) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`))
   }

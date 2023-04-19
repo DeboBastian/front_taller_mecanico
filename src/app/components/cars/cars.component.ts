@@ -1,3 +1,5 @@
+import { Car } from 'src/app/interfaces/car.interface';
+import { CarsService } from './../../services/cars.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +9,23 @@ import { Component } from '@angular/core';
 })
 export class CarsComponent {
 
+  cars: Car[]
+  
+  
+  constructor(
+    private carsService: CarsService
+  ) {
+    this.cars = []
+    }
+  
+
+  async ngOnInit() {
+    try {
+      const cars = await this.carsService.getAllCars()
+      this.cars = cars
+    } catch (error) {
+      console.log(error)
+    }
+   
+  }
 }

@@ -1,6 +1,6 @@
 
 export interface User{
-    id: number;
+    id?: number;
     name: string;
     surname: string;
     birthdate: number;
@@ -10,4 +10,5 @@ export interface User{
     username: string;
     password: string;
     role: string;
+    incorporation_date?: Date;
 }

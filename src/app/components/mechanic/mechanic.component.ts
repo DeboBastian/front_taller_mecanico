@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Reparation } from 'src/app/interfaces/mechanic.interface';
 import { ReparationsService } from 'src/app/services/reparations.service';
 
 @Component({
@@ -17,7 +16,7 @@ export class MechanicComponent {
   }
 
   async ngOnInit(){
-    const res = await this.reparationsService.getAll();
+    const res = await this.reparationsService.getAllReparations();
     this.arrReparations = res['results'];
   }
 

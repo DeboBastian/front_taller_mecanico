@@ -19,6 +19,12 @@ import { CarsComponent } from './components/cars/cars.component';
 import { ReparationsComponent } from './components/reparations/reparations.component';
 import { CardReparationComponent } from './components/card-reparation/card-reparation.component';
 import { ClientsComponent } from './components/clients/clients.component';
+import { CardCarComponent } from './components/card-car/card-car.component';
+import { CardClientComponent } from './components/card-client/card-client.component';
+import { CardUserComponent } from './components/card-user/card-user.component';
+import { CardMechanicComponent } from './components/card-mechanic/card-mechanic.component';
+import { MechanicsComponent } from './components/mechanics/mechanics.component';
+import { ListaMecanicosComponent } from './components/mechanic/lista-mecanicos/lista-mecanicos.component';
 
 
 @NgModule({
@@ -37,7 +43,13 @@ import { ClientsComponent } from './components/clients/clients.component';
     CarsComponent,
     ReparationsComponent,
     CardReparationComponent,
-    ClientsComponent
+    ClientsComponent,
+    CardCarComponent,
+    CardClientComponent,
+    CardUserComponent,
+    CardMechanicComponent,
+    MechanicsComponent,
+    ListaMecanicosComponent
   ],
 
   imports: [
