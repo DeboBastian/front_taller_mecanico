@@ -22,6 +22,8 @@ import { ClientsComponent } from './components/clients/clients.component';
 import { CardCarComponent } from './components/card-car/card-car.component';
 import { CardClientComponent } from './components/card-client/card-client.component';
 import { CardUserComponent } from './components/card-user/card-user.component';
+import { CardMechanicComponent } from './components/card-mechanic/card-mechanic.component';
+import { MechanicsComponent } from './components/mechanics/mechanics.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { CardUserComponent } from './components/card-user/card-user.component';
     ClientsComponent,
     CardCarComponent,
     CardClientComponent,
-    CardUserComponent
+    CardUserComponent,
+    CardMechanicComponent,
+    MechanicsComponent
   ],
 
   imports: [

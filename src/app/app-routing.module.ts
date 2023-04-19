@@ -15,6 +15,8 @@ import { CarsComponent } from './components/cars/cars.component';
 import { CardCarComponent } from './components/card-car/card-car.component';
 import { CardClientComponent } from './components/card-client/card-client.component';
 import { CardReparationComponent } from './components/card-reparation/card-reparation.component';
+import { MechanicsComponent } from './components/mechanics/mechanics.component';
+import { CardMechanicComponent } from './components/card-mechanic/card-mechanic.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/home" },
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "administration", component: AdministrationComponent },
   { path: "mechanic", component: MechanicComponent },
+  { path: "mechanics", component: MechanicsComponent },
+  { path: "mechanics/:id", component: CardMechanicComponent},
   { path: "reparations/new", component: NewReparationComponent },
   { path: "reparations", component: ReparationsComponent },
   { path: "reparations/:id", component: CardReparationComponent },

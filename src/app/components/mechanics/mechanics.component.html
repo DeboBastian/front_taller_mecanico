@@ -1,0 +1,7 @@
+<div class="mechanics">
+    <div class="mechanic" [routerLink]="['/mechanics', mechanic.id]" *ngFor="let mechanic of mechanics">
+        <h4>{{mechanic.name}} {{mechanic.surname}}</h4>
+        <p>Contact: {{mechanic.email}}</p>
+        <hr>
+    </div>
+</div>

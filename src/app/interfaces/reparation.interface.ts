@@ -1,6 +1,6 @@
 
 export interface Reparation {
-    id: number;
+    id?: number;
     date: Date,
     status: string;
     type: string;
