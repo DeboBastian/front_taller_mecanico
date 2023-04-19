@@ -5,7 +5,7 @@
 
 :root {
     --dark: #16191C;
-    --dark-x: #1E2126; 
+    --dark-x: #1E2126;
     --light: #ffffff;
 }
 
@@ -16,7 +16,7 @@ body {
     background-color: #1E2126;
 }
 
-span{
+span {
     font-weight: bold;
 }
 
@@ -35,22 +35,26 @@ span{
     color: #ffffff;
 }
 
-img {width: 100%}
+img {
+    width: 100%
+}
 
-#logo {width: 25%}
+#logo {
+    width: 25%
+}
 
-span{
+span {
     color: #CE9529;
     cursor: pointer;
 }
 
-.btn{
+.btn {
     background-color: #CE9529;
     color: #16191C;
     border: 1px solid #16191C;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #E4C58C;
     color: #16191C;
     border: 1px solid #16191C;
