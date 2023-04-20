@@ -22,12 +22,16 @@ export class CarsService {
     )
   }
 
-  getAllCars() {
-    return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
-  }
-
-
   getById(id: number) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`))
+  }
+
+  deleteById(id: number){
+    let url = `${this.baseUrl}/${id}`;
+    return firstValueFrom(this.httpClient.delete<any>(url))
+  }
+
+  getAllCars() {
+    return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
   }
 }

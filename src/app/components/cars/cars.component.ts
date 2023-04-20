@@ -21,11 +21,24 @@ export class CarsComponent {
 
   async ngOnInit() {
     try {
-      const cars = await this.carsService.getAllCars()
-      this.cars = cars
+      this.cars = await this.carsService.getAllCars()
+      console.log(this.cars);
     } catch (error) {
       console.log(error)
     }
    
+  }
+
+  async onClickDelete(indice: number | undefined) {
+    if (indice) {
+      await this.carsService.deleteById(indice)
+      try {
+        this.cars = await this.carsService.getAllCars()
+      } catch (error) {
+        console.log(error)
+      }
+      
+    }    
+    
   }
 }

@@ -1,9 +1,11 @@
 <div class="cars">
-    <div class="car" [routerLink]="['/cars', car.id]" *ngFor="let car of cars">
+    <div class="car" *ngFor="let car of cars">
         <p>Chasis: {{car.chasis}}</p>
         <p>Brand: {{car.brand}}</p>
         <p>Model: {{car.model}}</p>
         <p>Damages: {{car.damages}}</p>
+        <button class="btn btn-secondary" [routerLink]="['/cars', car.id]">Ver detalle</button>
+        <button class="btn btn-danger" (click)="onClickDelete(car.id)">Delete</button>
         <hr>
     </div>
 </div>
