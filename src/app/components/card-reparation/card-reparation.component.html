@@ -1,9 +1,16 @@
-<div class="reparation">
-    <p>Arrival date: {{reparation.date}}</p>
-    <p>Status: {{reparation.status}}</p>
-    <p>Type of reparation: {{reparation.type}}</p>
-    <p>More about the reparation: {{reparation.reparation}}</p>
-    <p>Price: {{reparation.price}} €
-    <p>Bill Number: {{reparation.bill_number}}</p>
-    <p>Car: {{reparation.cars_id}}</p>
+<div class="container">
+    <div class="reparation">
+        <p>Arrival date: {{reparation.date}}</p>
+        <p>Status: {{reparation.status}}</p>
+        <p>Type of reparation: {{reparation.type}}</p>
+        <p>More about the reparation: {{reparation.reparation}}</p>
+        <p>Price: {{reparation.price}} €
+        <p>Bill Number: {{reparation.bill_number}}</p>
+        <p>Car: {{reparation.cars_id}}</p>
+    </div>
+
+    <div *ngFor="let mechanic of mechanics" class="mechanic">
+        <h4>MECHANIC FOR THIS CAR</h4>
+        <h5>{{mechanic.name}} {{mechanic.surname}}</h5>
+    </div>
 </div>

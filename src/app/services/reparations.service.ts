@@ -36,7 +36,11 @@ export class ReparationsService {
 
 
    getByUsers(id: number) {
-    return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/mechanic/${id}`))
+    return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/mechanic/reparations/${id}`))
   }
 
+
+  mechanicForReparations(id: number) {
+    return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/mechanic/${id}`))
+  }
 }
