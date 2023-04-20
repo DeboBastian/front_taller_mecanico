@@ -16,7 +16,8 @@ export class CardCarComponent {
 
   constructor(
     private carsService: CarsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+
   ) {
     this.car = {
       id: 0,

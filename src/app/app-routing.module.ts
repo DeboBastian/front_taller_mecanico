@@ -25,8 +25,6 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "administration", component: AdministrationComponent },
   { path: "mechanic", component: MechanicComponent },
-  { path: "cars", component: NewCarComponent },
-  { path: "reparations", component: NewReparationComponent },
   { path: "admin/reparations", component: ReparationsComponent },
   { path: "reparation/:id", component: CardReparationComponent },
   { path: "clients/new", component: NewClientComponent },

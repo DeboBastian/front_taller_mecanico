@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Car } from 'src/app/interfaces/car.interface';
 import { Client } from 'src/app/interfaces/client.interface';
+import { CarsService } from 'src/app/services/cars.service';
 import { ClientsService } from 'src/app/services/clients.service';
 
 @Component({
@@ -11,6 +13,7 @@ import { ClientsService } from 'src/app/services/clients.service';
 export class CardClientComponent {
 
   client: Client
+  cars: Car[]
 
   constructor(
     private clientsService: ClientsService,
@@ -26,12 +29,18 @@ export class CardClientComponent {
       address: "",
       card_number: 0
     }
+
+    this.cars = []
   }
 
   ngOnInit() {
     try {
       this.activatedRoute.params.subscribe(async data => {
+        console.log(data)
         this.client = await this.clientsService.getById(parseInt(data['id']));
+        //recuperar los coches de un cliente
+        this.cars = await this.clientsService.getByClient(parseInt(data['id']))
+        console.log(this.cars)
       })
 
     } catch (error) {

@@ -12,7 +12,7 @@
         <p>Type of fuel: {{car.fuel}}</p>
         <p>Damages: {{car.damages}}</p>
     </div>
-    <div class="client" *ngFor="let client of clients">
+    <div *ngFor="let client of clients" class="client">
         <h3>CLIENT OF THIS CAR</h3>
         <h4>{{client.name}} {{client.surname}}</h4>
         <p>Contact:</p>

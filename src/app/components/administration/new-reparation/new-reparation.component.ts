@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Car } from 'src/app/interfaces/car.interface';
 import { User } from 'src/app/interfaces/user.interface';
 import { CarsService } from 'src/app/services/cars.service';
+import { MechanicsService } from 'src/app/services/mechanics.service';
 import { ReparationsService } from 'src/app/services/reparations.service';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -20,7 +21,8 @@ export class NewReparationComponent {
 
     private reparationsService: ReparationsService,
     private carsService: CarsService,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private mechanicsService: MechanicsService
 
   ) {
     this.cars = []
@@ -39,7 +41,7 @@ export class NewReparationComponent {
   async ngOnInit() {
     try {
       this.cars = await this.carsService.getAllCars()
-      this.users = await this.usersService.getAllUsers()
+      this.users = await this.mechanicsService.getAllMechanics()
       
     } catch (error) {
       console.log(error)

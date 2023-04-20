@@ -32,6 +32,11 @@ export class ClientsService {
   getById(id: number) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`))
   }
+
+
+  getByClient(id: number) {
+    return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/car/${id}`))
+  }
 }
 
 
