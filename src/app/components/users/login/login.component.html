@@ -1,4 +1,4 @@
-<body class="bg-dark">
+<div class="bg-dark">
   <section>
     <div class="row g-0">
       <div class="col-lg-7 d-none d-lg-block">
@@ -24,33 +24,32 @@
               <!-- <p class="error" *ngIf="checkError('dni', 'required')">
                 This field is required.
                 </p> -->
-            </div>
+              </div>
 
-            <div class="mb-4">
-              <label class="form-label font-weight-bold">Email</label>
-              <input type="email" class="form-control bg-dark-x border-0" placeholder="Enter your email"
-                formControlName="email" style="color: white;">
-              <p class="error" *ngIf="checkError('email', 'required')">
-                <!-- This field is required. -->
+              <div class="mb-4">
+                <label class="form-label font-weight-bold">Email</label>
+                <input type="email" class="form-control bg-dark-x border-0" placeholder="Enter your email" formControlName="email">
+                <p class="error" *ngIf="checkError('email', 'required')">
+                  <!-- This field is required. -->
               </p>
-            </div>
-
-            <div class="mb-4">
-              <label class="form-label font-weight-bold">Contraseña</label>
-              <input type="password" class="form-control" class="form-control bg-dark-x border-0 mb-2"
-                placeholder="Enter your password" formControlName="password" style="color: white;">
-              <p class="error" *ngIf="checkError('password', 'required')">
-                <!-- This field is required. -->
+              </div>
+              
+              <div class="mb-4">
+                <label class="form-label font-weight-bold">Password</label>
+                <input type="password" class="form-control" class="form-control bg-dark-x border-0 mb-2" placeholder="Enter your password" formControlName="password">
+                <p class="error" *ngIf="checkError('password', 'required')">
+                  <!-- This field is required. -->
               </p>
-            </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary w-100">SUBMIT</button>
+            </form>
 
-            <button type="submit" class="btn btn-primary w-100">SUBMIT</button>
-          </form>
+            </div>
 
         </div>
       </div>
-    </div>
   </section>
-</body>
+</div>
 
 <!-- Foto coche amarillo perteneciente a Mark Neal en Pexels: https://www.pexels.com/es-es/foto/coche-amarillo-2218915/ -->

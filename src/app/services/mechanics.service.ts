@@ -24,4 +24,6 @@ export class MechanicsService {
   getById(id: number) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`))
   }
+
+
 }
