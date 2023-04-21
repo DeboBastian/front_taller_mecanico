@@ -6,34 +6,30 @@
 
 <!-- NAVIGATION -->
 <div class="container-fluid">
-    <div class="row">
-        <div class="d-flex flex-colum justtify-content-between col-auto bg-dark min-vh-100" >
-            <a class="text-white text-decoration-none d-flex align-items-center ms-4" role="button">
-                <span class="fs-5">Sidemenu</span>
-            </a>
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a href="#" class="nav-link active"></a>
-                </li>
-            </ul>
-        </div>
-        
-        <ul>
-            <li>
-                <a href="#">
-                <!-- <span class="icon"><i class='bx bxs-car-mechanic'></i></span> -->
-                <span class="tittle-company">ASPHALT AUTOMOTIVE</span>
-                </a>
-            </li>
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
 
-            <li class="active">
-                <a href="#">
-                <span class="icon"><i class='bx bx-home-alt-2'></i></span>
-                <span class="tittle">Dashboard</span>
-                </a>
-            </li>
-            
-        </ul>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a class="nav-link align-middle px-0">
+                            <span class="active" class="ms-1 d-none d-sm-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/home" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <span class="ms-1 d-none d-sm-inline">Home</span> </a>
+                    </li>
+
+                    <!-- Hay que poner un método que elimine los datos del usuario logeado cuando se vaya -->
+                    <li>
+                        <a routerLink="/home" class="nav-link px-0 align-middle">
+                            <span class="ms-1 d-none d-sm-inline">Logout</span> </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
     </div>
 </div>
 
@@ -43,7 +39,7 @@
     <div class="topbar">
         <div class="search">
             <input class="form-control" type="text" name="search" autocomplete="off" placeholder=" Search by vehicle or customer">
-            <button>SEARCH</button>
+            <button class="btn-search">SEARCH</button>
         </div>
     </div>
 
