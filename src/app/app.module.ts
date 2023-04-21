@@ -47,11 +47,7 @@ import { MechanicsComponent } from './components/mechanics/mechanics.component';
     CardClientComponent,
     CardUserComponent,
     CardMechanicComponent,
-<<<<<<< HEAD
     MechanicsComponent
-=======
-    MechanicsComponent,
->>>>>>> mechanic
   ],
 
   imports: [
