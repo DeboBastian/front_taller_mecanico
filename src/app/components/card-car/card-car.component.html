@@ -10,4 +10,6 @@
     <p>Type of car: {{car.type}}</p>
     <p>Type of fuel: {{car.fuel}}</p>
     <p>Damages: {{car.damages}}</p>
+    <button class="btn btn-secondary">Update</button>
+    <button class="btn btn-danger" (click)="onClickDelete(car.id)" [routerLink]="['/cars', car.id]">Delete</button>
 </div>

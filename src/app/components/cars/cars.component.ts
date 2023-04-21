@@ -29,16 +29,6 @@ export class CarsComponent {
    
   }
 
-  async onClickDelete(indice: number | undefined) {
-    if (indice) {
-      await this.carsService.deleteById(indice)
-      try {
-        this.cars = await this.carsService.getAllCars()
-      } catch (error) {
-        console.log(error)
-      }
-      
-    }    
-    
-  }
+  
+
 }

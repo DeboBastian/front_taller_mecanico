@@ -23,11 +23,9 @@ export class ReparationsService {
 
 } 
 
-
   getAllReparations() {
     return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
   }
-
   
   getById(id: number) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`))

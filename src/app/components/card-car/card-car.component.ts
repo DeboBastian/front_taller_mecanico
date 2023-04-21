@@ -1,7 +1,7 @@
 import { Car } from './../../interfaces/car.interface';
 import { Component } from '@angular/core';
 import { CarsService } from 'src/app/services/cars.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-car',
@@ -10,11 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CardCarComponent {
 
-car: Car
+  car: Car
 
   constructor(
     private carsService: CarsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.car = {
       id: 0,
@@ -44,4 +45,20 @@ car: Car
       console.log(error)
     }
   }
-}
+
+  async onClickDelete(indice: number | undefined) {    
+    if (indice) {
+      await this.carsService.deleteById(indice)
+      try {
+        this.car = await this.carsService.getAllCars()
+      } catch (error) {
+        console.log(error)
+      }
+    }  
+    } 
+    
+
+  
+
+  
+  }
