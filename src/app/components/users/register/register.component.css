@@ -12,24 +12,6 @@ label {
     color: white;
 }
 
-/* --GOOGLE FONTS-- */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
-
-/* font-family: 'Montserrat', sans-serif; */
-
-:root {
-    --dark: #16191C;
-    --dark-x: #1E2126;
-    --light: #ffffff;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    color: #ffffff;
-    background-color: #1E2126;
-}
-
 span {
     font-weight: bold;
 }
