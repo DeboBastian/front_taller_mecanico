@@ -26,7 +26,6 @@ import { CardMechanicComponent } from './components/card-mechanic/card-mechanic.
 import { MechanicsComponent } from './components/mechanics/mechanics.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +47,11 @@ import { MechanicsComponent } from './components/mechanics/mechanics.component';
     CardClientComponent,
     CardUserComponent,
     CardMechanicComponent,
+<<<<<<< HEAD
     MechanicsComponent
+=======
+    MechanicsComponent,
+>>>>>>> mechanic
   ],
 
   imports: [

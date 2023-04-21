@@ -22,4 +22,6 @@
         <p>Address: {{client.address}}</p>
         <p>Card number: {{client.card_number}}</p>
     </div>
+    <button class="btn btn-secondary">Update</button>
+    <button class="btn btn-danger" (click)="onClickDelete(car.id)" [routerLink]="['/cars', car.id]">Delete</button>
 </div>

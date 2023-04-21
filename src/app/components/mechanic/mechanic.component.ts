@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Reparation } from 'src/app/interfaces/reparation.interface';
 import { ReparationsService } from 'src/app/services/reparations.service';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'mechanic',
@@ -9,15 +10,23 @@ import { ReparationsService } from 'src/app/services/reparations.service';
 })
 export class MechanicComponent {
 
-    arrReparations: any[];
+  reparations: Reparation[]
 
-  constructor(private reparationsService: ReparationsService) { 
-        this.arrReparations = [];
-  }
+  constructor(
+        private reparationsService: ReparationsService
+        ) { 
+        this.reparations = [];
+        }
 
   async ngOnInit(){
-    const res = await this.reparationsService.getAllReparations();
-    this.arrReparations = res['results'];
+    try {
+      this.reparations = await this.reparationsService.getAllReparations()
+      console.log(this.reparations);
+    } catch (error) {
+      console.log(error);
+    }
   }
+
+  //Funcion que muestre todas las reparaciones pulsando botón "view all"
 
 }
