@@ -4,6 +4,7 @@ import { Car } from 'src/app/interfaces/car.interface';
 import { Client } from 'src/app/interfaces/client.interface';
 import { CarsService } from 'src/app/services/cars.service';
 import { ClientsService } from 'src/app/services/clients.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-card-client',
@@ -17,7 +18,8 @@ export class CardClientComponent {
 
   constructor(
     private clientsService: ClientsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private location: Location
   ) {
     this.client = {
       id: 0,
@@ -45,6 +47,14 @@ export class CardClientComponent {
 
     } catch (error) {
       console.log(error)
+    }
+  }
+
+  async deleteClient(client: Client) {
+    const confirmed = confirm(`¿Seguro que desea eliminar al cliente ${client.name}?`);
+    if (confirmed && client.id != undefined) {
+      await this.clientsService.deleteClient(client.id);
+      this.location.back();
     }
   }
 }

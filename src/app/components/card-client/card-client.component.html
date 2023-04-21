@@ -1,13 +1,17 @@
 <div class="container">
-    <div class="client">
-        <p>Name: {{client.name}}</p>
-        <p>Surname: {{client.surname}}</p>
-        <p>Email: {{client.email}}</p>
-        <p>Phone: {{client.phone}}</p>
-        <p>DNI: {{client.dni}}
-        <p>Address: {{client.address}}</p>
-        <p>Card number: {{client.card_number}}</p>
-    </div>
+    <article>
+        <div class="client">
+            <p>Name: {{client.name}}</p>
+            <p>Surname: {{client.surname}}</p>
+            <p>Email: {{client.email}}</p>
+            <p>Phone: {{client.phone}}</p>
+            <p>DNI: {{client.dni}}
+            <p>Address: {{client.address}}</p>
+            <p>Card number: {{client.card_number}}</p>
+        </div>
+        <button class="delete-icon" (click)="deleteClient(client)">Delete</button>
+    </article>
+
 
 
     <div *ngFor="let car of cars" class="cars">

@@ -17,7 +17,7 @@ export class ClientsService {
 
 
 
-  
+
   getAllClients() {
     return firstValueFrom<any[]>(this.httpClient.get<any>(this.baseUrl))
   }
@@ -37,6 +37,13 @@ export class ClientsService {
   getByClient(id: number) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/car/${id}`))
   }
+
+  deleteClient(id: number) {
+    return firstValueFrom<any>(
+      this.httpClient.delete<any>(`${this.baseUrl}/${id}`)
+    );
+  }
+
 }
 
 
