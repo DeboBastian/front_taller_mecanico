@@ -17,6 +17,10 @@ import { CardClientComponent } from './components/card-client/card-client.compon
 import { CardReparationComponent } from './components/card-reparation/card-reparation.component';
 import { MechanicsComponent } from './components/mechanics/mechanics.component';
 import { CardMechanicComponent } from './components/card-mechanic/card-mechanic.component';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { CardEmployeeComponent } from './components/card-employee/card-employee.component';
+import { EditReparationComponent } from './components/administration/edit-reparation/edit-reparation.component';
+import { EditAdminComponent } from './components/administration/edit-admin/edit-admin.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/home" },
@@ -24,9 +28,10 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "administration", component: AdministrationComponent },
+  { path: "admins", component: EmployeesComponent },
+  { path: "admins/:id", component: CardEmployeeComponent },
+  { path: "users/edit/:id", component: EditAdminComponent },
   { path: "mechanic", component: MechanicComponent },
-  { path: "admin/reparations", component: ReparationsComponent },
-  { path: "reparation/:id", component: CardReparationComponent },
   { path: "clients/new", component: NewClientComponent },
   { path: "clients", component: ClientsComponent },
   { path: "mechanics", component: MechanicsComponent },
@@ -34,6 +39,7 @@ const routes: Routes = [
   { path: "reparations/new", component: NewReparationComponent },
   { path: "reparations", component: ReparationsComponent },
   { path: "reparations/:id", component: CardReparationComponent },
+  { path: "reparations/edit/:id", component: EditReparationComponent},
   { path: "clients/new", component: NewClientComponent },
   { path: "clients", component: ClientsComponent },
   { path: "clients/:id", component: CardClientComponent },

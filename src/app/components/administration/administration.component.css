@@ -1,9 +1,30 @@
-.container{
+
+.new{
     margin-top: 60px;
-    width: 33.33%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.info{
+   margin-top: 60px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     align-items: center;
     justify-content: center;
-  }
+}
+
+.employeers{
+     margin-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}

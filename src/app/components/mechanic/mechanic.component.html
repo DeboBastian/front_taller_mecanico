@@ -10,19 +10,24 @@
         <ul>
             <li>
                 <a href="#">
-                <!-- <span class="icon"><i class='bx bxs-car-mechanic'></i></span> -->
-                <span class="tittle-company">ASPHALT CAR-MANAGER</span>
+                    <!-- <span class="icon"><i class='bx bxs-car-mechanic'></i></span> -->
+                    <span class="tittle-company">ASPHALT CAR-MANAGER</span>
                 </a>
             </li>
 
             <li class="active">
                 <a href="#">
-                <span class="icon"><i class='bx bx-home-alt-2'></i></span>
-                <span class="tittle">Dashboard</span>
+                    <span class="icon"><i class='bx bx-home-alt-2'></i></span>
+                    <span class="tittle">Dashboard</span>
                 </a>
+                <button routerLink="/cars" type="button" class="btn btn-outline-secondary">CARS</button>
+                <button routerLink="/reparations" type="button" class="btn btn-outline-secondary">REPARATIONS</button>
+                <button routerLink="/mechanics" type="button" class="btn btn-outline-secondary">MECHANICS</button>
             </li>
         </ul>
+
     </div>
+
 </div>
 
 <!-- MAIN -->
@@ -30,7 +35,8 @@
 <div class="main">
     <div class="topbar">
         <div class="search">
-            <input class="form-control" type="text" name="search" autocomplete="off" placeholder=" Search by vehicle or customer">
+            <input class="form-control" type="text" name="search" autocomplete="off"
+                placeholder=" Search by vehicle or customer">
             <button>SEARCH</button>
         </div>
     </div>
@@ -43,7 +49,7 @@
                 <h2>reparation orders</h2>
                 <a href="#" class="btn">View All</a>
             </div>
-              
+
             <table>
                 <thead>
                     <tr class="menu">
@@ -54,7 +60,7 @@
                         <th>Type</th>
                         <th>Price</th>
                         <th>Status</th>
-                    </tr>                
+                    </tr>
                 </thead>
 
                 <tbody>
@@ -106,5 +112,6 @@
                 </tbody>
             </table>
         </div>
-    </div> 
+    </div>
+
 </div>

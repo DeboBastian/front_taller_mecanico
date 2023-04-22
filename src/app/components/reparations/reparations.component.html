@@ -1,8 +1,11 @@
 <div class="reparations">
-    <div class="reparation" [routerLink]="['/reparations', reparation.id]" *ngFor="let reparation of reparations">
+    <div class="reparation" *ngFor="let reparation of reparations">
         <p>Arrival Date: {{reparation.date}}</p>
         <p>Status: {{reparation.status}}</p>
         <p>User: {{reparation.users_id}}</p>
+
+        <button type="button" class="btn btn-light" [routerLink]="['/reparations', reparation.id]">VIEW DETAILS</button>
         <hr>
     </div>
+
 </div>

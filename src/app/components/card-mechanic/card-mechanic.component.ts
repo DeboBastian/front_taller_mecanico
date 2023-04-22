@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Reparation } from 'src/app/interfaces/reparation.interface';
 import { User } from 'src/app/interfaces/user.interface';
 import { MechanicsService } from 'src/app/services/mechanics.service';
@@ -17,7 +17,8 @@ export class CardMechanicComponent {
   constructor(
     private mechanicService: MechanicsService,
     private reparationsService: ReparationsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.mechanic = {
       id: 0,
@@ -44,10 +45,8 @@ export class CardMechanicComponent {
       this.activatedRoute.params.subscribe(async data => {
         this.mechanic = await this.mechanicService.getById(parseInt(data['id']));
         
-        //lanzar metodo del servicio reparaciones que devuelva las reparaciones de este mecanico
-        //pintar estas reparaciones
         this.reparations = await this.reparationsService.getByUsers(parseInt(data['id']))
-        console.log(this.reparations)
+        
       })
 
     } catch (error) {

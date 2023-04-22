@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Car } from 'src/app/interfaces/car.interface';
 import { User } from 'src/app/interfaces/user.interface';
 import { CarsService } from 'src/app/services/cars.service';
@@ -18,7 +19,7 @@ export class NewReparationComponent {
   users: User[]
 
   constructor(
-
+    private router: Router,
     private reparationsService: ReparationsService,
     private carsService: CarsService,
     private usersService: UsersService,
@@ -28,7 +29,7 @@ export class NewReparationComponent {
     this.cars = []
     this.users = []
     this.formulary = new FormGroup({
-      status: new FormControl(),
+      
       type: new FormControl(),
       reparation: new FormControl(),
       price: new FormControl(),
@@ -54,7 +55,8 @@ export class NewReparationComponent {
 
     try {
       const response = await this.reparationsService.createReparation(this.formulary.value)
-      console.log(response)
+      
+      this.router.navigate(['/reparations'])
     } catch (error) {
       console.log(error)
     }

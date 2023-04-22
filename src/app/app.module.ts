@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 import { LoginComponent } from './components/users/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { MechanicComponent } from './components/mechanic/mechanic.component';
@@ -21,9 +22,12 @@ import { CardReparationComponent } from './components/card-reparation/card-repar
 import { ClientsComponent } from './components/clients/clients.component';
 import { CardCarComponent } from './components/card-car/card-car.component';
 import { CardClientComponent } from './components/card-client/card-client.component';
-import { CardUserComponent } from './components/card-user/card-user.component';
 import { CardMechanicComponent } from './components/card-mechanic/card-mechanic.component';
 import { MechanicsComponent } from './components/mechanics/mechanics.component';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { CardEmployeeComponent } from './components/card-employee/card-employee.component';
+import { EditAdminComponent } from './components/administration/edit-admin/edit-admin.component';
+import { EditReparationComponent } from './components/administration/edit-reparation/edit-reparation.component';
 
 
 
@@ -46,9 +50,12 @@ import { MechanicsComponent } from './components/mechanics/mechanics.component';
     ClientsComponent,
     CardCarComponent,
     CardClientComponent,
-    CardUserComponent,
     CardMechanicComponent,
-    MechanicsComponent
+    MechanicsComponent,
+    EmployeesComponent,
+    CardEmployeeComponent,
+    EditAdminComponent,
+    EditReparationComponent
   ],
 
   imports: [
@@ -61,4 +68,6 @@ import { MechanicsComponent } from './components/mechanics/mechanics.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+  
+  
 export class AppModule { }

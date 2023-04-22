@@ -23,8 +23,12 @@ export class ReparationsComponent {
 
 
   async ngOnInit() {
-    const reparations = await this.reparationsService.getAllReparations();
-    this.reparations = reparations;
-  };
-
+    try {
+      const reparations = await this.reparationsService.getAllReparations();
+      this.reparations = reparations;
+    } catch (error) {
+      console.log(error)
+    }
+    
+  }
 }

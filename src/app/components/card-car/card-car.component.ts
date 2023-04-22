@@ -1,7 +1,7 @@
 import { Car } from './../../interfaces/car.interface';
 import { Component } from '@angular/core';
 import { CarsService } from 'src/app/services/cars.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from 'src/app/interfaces/client.interface';
 
 @Component({
@@ -17,6 +17,7 @@ export class CardCarComponent {
   constructor(
     private carsService: CarsService,
     private activatedRoute: ActivatedRoute,
+    
 
   ) {
     this.car = {

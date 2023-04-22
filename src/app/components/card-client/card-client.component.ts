@@ -38,9 +38,7 @@ export class CardClientComponent {
       this.activatedRoute.params.subscribe(async data => {
         console.log(data)
         this.client = await this.clientsService.getById(parseInt(data['id']));
-        //recuperar los coches de un cliente
         this.cars = await this.clientsService.getByClient(parseInt(data['id']))
-        console.log(this.cars)
       })
 
     } catch (error) {

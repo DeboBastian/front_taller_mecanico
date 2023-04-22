@@ -3,15 +3,15 @@
         <div class="col-12 col-lg-8 offset-0 offset-lg-2">
 
             <form [formGroup]="formulary" (ngSubmit)="onSubmit()">
-                <h1> NEW REPARATION </h1>
+                <h1> UPDATE REPARATION </h1>
                 <div class="form-group mb-3">
-                    <!-- <label class="form-label">Status</label>
+                    <label class="form-label">Status</label>
                     <select class="form-select" formControlName="status">
                         <option value="">Choose one of the following answers</option>
                         <option value="in_progress">In progress</option>
                         <option value="repaired">Repaired</option>
                         <option value="pending">Pending</option>
-                   </select>-->
+                    </select>
                 </div>
                 <div class="form-group mb-3">
                     <label class="form-label">Type of reparation</label>
@@ -36,14 +36,6 @@
                     <select class="form-select" formControlName="users_id">
                         <option value="">Choose one of the following answers</option>
                         <option *ngFor="let user of users" [value]="user.id">{{user.name}} {{user.surname}}</option>
-                    </select>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label class="form-label">Car</label>
-                    <select class="form-select" formControlName="cars_id">
-                        <option value="">Choose one of the following answers</option>
-                        <option *ngFor="let car of cars" [value]="car.id">{{car.chasis}} - {{car.model}}</option>
                     </select>
                 </div>
 

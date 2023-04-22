@@ -1,0 +1,11 @@
+<div class="employees">
+    <div class="employee" *ngFor="let user of users">
+        <h4>{{user.name}} {{user.surname}}</h4>
+        <p>DNI: {{user.dni}}</p>
+
+        <button type="button" class="btn btn-light" [routerLink]="['/admins', user.id]">VIEW
+            DETAILS</button>
+        <hr>
+    </div>
+
+</div>
