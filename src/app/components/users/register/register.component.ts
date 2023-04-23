@@ -1,7 +1,10 @@
+
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'register',
@@ -10,9 +13,10 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class RegisterComponent {
   formulary: FormGroup;
-  
+ 
 
   constructor(
+    
     private usersService: UsersService,
     private router: Router
   ) {
@@ -115,8 +119,10 @@ export class RegisterComponent {
 
     try {
       const newUser = await this.usersService.register(this.formulary.value)
-      console.log(newUser)
-      this.router.navigate(['/login'])
+      
+      await Swal.fire('New employeer','Welcame with us!', 'success');
+    
+      this.router.navigate(['/home'])
     } catch (error) {
       console.log(error)
     }
@@ -128,3 +134,5 @@ checkError(control: string, validator: string) {
 }
 
 }
+
+//TODO: ALERT Y VALIDADORES

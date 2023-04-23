@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Mechanic } from 'src/app/interfaces/mechanic.interface';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Reparation } from 'src/app/interfaces/reparation.interface';
 import { User } from 'src/app/interfaces/user.interface';
-import { MechanicsService } from 'src/app/services/mechanics.service';
 import { ReparationsService } from 'src/app/services/reparations.service';
 
 @Component({
@@ -18,7 +16,8 @@ export class CardReparationComponent {
 
   constructor(
     private reparationsService: ReparationsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.reparation = {
       id: 0,
@@ -47,4 +46,15 @@ export class CardReparationComponent {
     }
   }
 
-}
+
+
+  async onDelete(reparationId: any) {
+      try {
+        await this.reparationsService.deleteReparation(reparationId)
+        this.router.navigate(['/reparations'])
+      } catch (error) {
+        console.log(error)
+      }
+  }
+  
+  }

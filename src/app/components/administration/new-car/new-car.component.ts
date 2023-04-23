@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Client } from 'src/app/interfaces/client.interface';
 import { CarsService } from 'src/app/services/cars.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'new-car',
@@ -17,8 +18,8 @@ export class NewCarComponent {
   constructor(
 
     private carsService: CarsService,
-    private clientsService: ClientsService
-
+    private clientsService: ClientsService,
+    private router: Router
   ) {
     this.clients = []
     this.formulary = new FormGroup({
@@ -51,7 +52,8 @@ export class NewCarComponent {
 
     try {
       const response = await this.carsService.registerCar(this.formulary.value)
-      console.log(response)
+
+      this.router.navigate(['/cars'])
     } catch (error) {
       console.log(error)
     }

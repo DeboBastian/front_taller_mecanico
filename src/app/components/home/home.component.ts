@@ -8,13 +8,5 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
 
-  loginBoton() {
-    console.log('Le has dado click')
-  }
-
-  signupBoton() {
-    console.log('Le has dado click')
-  }
-
 
 }

@@ -7,6 +7,9 @@
         <p>Price: {{reparation.price}} €
         <p>Bill Number: {{reparation.bill_number}}</p>
         <p>Car: {{reparation.cars_id}}</p>
+        <button type="button" class="btn btn-danger" (click)="onDelete(reparation.id)">🗑️ DELETE</button>
+        <button type="button" class="btn btn-warning" [routerLink]="['/reparations', 'edit', reparation.id]">✏️
+            UPDATE</button>
     </div>
 
     <div *ngFor="let mechanic of mechanics" class="mechanic">

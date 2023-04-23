@@ -15,6 +15,11 @@
                         <a class="nav-link align-middle px-0">
                             <span class="active" class="ms-1 d-none d-sm-inline">Dashboard</span>
                         </a>
+                        <button routerLink="/cars" type="button" class="btn btn-outline-secondary">CARS</button>
+                        <button routerLink="/reparations" type="button"
+                            class="btn btn-outline-secondary">REPARATIONS</button>
+                        <button routerLink="/mechanics" type="button"
+                            class="btn btn-outline-secondary">MECHANICS</button>
                     </li>
                     <li>
                         <a routerLink="/home" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
@@ -31,6 +36,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 <!-- MAIN -->
@@ -38,7 +44,8 @@
 <div class="main">
     <div class="topbar">
         <div class="search">
-            <input class="form-control" type="text" name="search" autocomplete="off" placeholder=" Search by vehicle or customer">
+            <input class="form-control" type="text" name="search" autocomplete="off"
+                placeholder=" Search by vehicle or customer">
             <button class="btn-search">SEARCH</button>
         </div>
     </div>
@@ -51,7 +58,7 @@
                 <h2>reparation orders</h2>
                 <a href="#" class="btn">View All</a>
             </div>
-              
+
             <table>
                 <thead>
                     <tr class="menu">
@@ -62,7 +69,7 @@
                         <th>Type</th>
                         <th>Price</th>
                         <th>Status</th>
-                    </tr>                
+                    </tr>
                 </thead>
 
                 <tbody>
@@ -95,7 +102,7 @@
                         </select>
                         <button>Send</button>
                     </tr>
-    
+
                     <tr>
                         <td>Date</td>
                         <td>Reparation</td>
@@ -113,5 +120,6 @@
                 </tbody>
             </table>
         </div>
-    </div> 
+    </div>
+
 </div>

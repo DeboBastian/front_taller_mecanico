@@ -41,4 +41,18 @@ export class ReparationsService {
   mechanicForReparations(id: number) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/mechanic/${id}`))
   }
+
+
+  deleteReparation(id: number) {
+    return firstValueFrom(this.httpClient.delete<any>(`${this.baseUrl}/${id}`))
+  }
+
+
+  updateReparation(values: any, id: number) {
+    return firstValueFrom(
+      this.httpClient.put<any>(`${this.baseUrl}/edit/${id}`, values)
+    );
+  }
 }
+
+

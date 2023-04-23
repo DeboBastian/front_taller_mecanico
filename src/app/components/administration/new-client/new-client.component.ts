@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ClientsService } from 'src/app/services/clients.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class NewClientComponent {
   formulary: FormGroup;
 
   constructor(
-    private clientsService: ClientsService
+    private clientsService: ClientsService,
+    private router: Router
   ) {
     this.formulary = new FormGroup({
       name: new FormControl(),
@@ -29,7 +31,7 @@ export class NewClientComponent {
 
     try {
       const response = await this.clientsService.registerNewClient(this.formulary.value)
-      console.log(response)
+      this.router.navigate(['/clients'])
     } catch (error) {
       console.log(error)
     }
