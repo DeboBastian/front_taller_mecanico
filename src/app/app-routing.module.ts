@@ -17,6 +17,7 @@ import { CardClientComponent } from './components/card-client/card-client.compon
 import { CardReparationComponent } from './components/card-reparation/card-reparation.component';
 import { MechanicsComponent } from './components/mechanics/mechanics.component';
 import { CardMechanicComponent } from './components/card-mechanic/card-mechanic.component';
+import { EditClientComponent } from './components/edit-client/edit-client.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/home" },
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: "clients/new", component: NewClientComponent },
   { path: "clients", component: ClientsComponent },
   { path: "clients/:id", component: CardClientComponent },
+  { path: "clients/update/:id", component: EditClientComponent },
   { path: "cars/new", component: NewCarComponent },
   { path: "cars", component: CarsComponent },
   { path: "cars/:id", component: CardCarComponent },
