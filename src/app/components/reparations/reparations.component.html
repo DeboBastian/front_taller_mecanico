@@ -1,11 +1,63 @@
-<div class="reparations">
-    <div class="reparation" *ngFor="let reparation of reparations">
-        <p>Arrival Date: {{reparation.date}}</p>
-        <p>Status: {{reparation.status}}</p>
-        <p>User: {{reparation.users_id}}</p>
-
-        <button type="button" class="btn btn-light" [routerLink]="['/reparations', reparation.id]">VIEW DETAILS</button>
-        <hr>
-    </div>
-
+<!-- SIDEBAR -->
+<div class="row">
+    <nav class="sidebar">
+        <ul class="nav">    
+            <li class="nav-item menu-items">
+            <a class="nav-link" routerLink="/mechanic">
+                <span class="menu-icon">
+                <i class='bx bx-tachometer'></i>
+                </span>
+                <span class="menu-title">Dashboard</span>
+            </a>
+            </li>
+            
+            <li class="nav-item menu-items">
+            <a class="nav-link" routerLink="/home">
+                <span class="menu-icon">
+                    <i class='bx bx-home-alt-2' ></i>
+                </span>
+                <span class="menu-title">Home</span>
+            </a>
+            </li>
+            
+            <li class="nav-item menu-items">
+            <a class="nav-link" routerLink="/home">
+                <span class="menu-icon">
+                    <i class='bx bx-log-out'></i>
+                </span>
+                <span class="menu-title">Log out</span>
+            </a>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- REPARATIONS DETAILS -->
+    <div class="main mt-5">
+        <div class="topbar">
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>all reparation orders</h2>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr class="menu">
+                                <th>Arrival date</th>
+                                <th>Status</th>
+                                <th>User</th>
+                            </tr>                
+                        </thead>
+                        <tbody class="client" [routerLink]="['/reparations', reparation.id]" *ngFor="let reparation of reparations">
+                            <tr>
+                                <td>{{reparation.date}}</td>
+                                <td>{{reparation.status}}</td>
+                                <td>{{reparation.users_id}}</td>
+                                <button [routerLink]="['/reparations', reparation.id]">Details</button>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
+        </div> 
+    </div> 
 </div>

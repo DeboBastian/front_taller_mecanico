@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class MechanicComponent {
 
-  reparations: Reparation[]
+  reparations!: Reparation[]
 
   constructor(
         private reparationsService: ReparationsService
@@ -18,15 +18,9 @@ export class MechanicComponent {
         this.reparations = [];
         }
 
-  async ngOnInit(){
-    try {
-      this.reparations = await this.reparationsService.getAllReparations()
-      console.log(this.reparations);
-    } catch (error) {
-      console.log(error);
-    }
+  async ngOnInit() {
+    this.reparations = await this.reparationsService.getAllReparations();
   }
 
-  //Funcion que muestre todas las reparaciones pulsando botón "view all"
 
 }

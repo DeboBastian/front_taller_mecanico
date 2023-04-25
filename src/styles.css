@@ -3,15 +3,8 @@
 
 /* font-family: 'Montserrat', sans-serif; */
 
-:root {
-    --dark: #16191C;
-    --dark-x: #1E2126;
-    --light: #ffffff;
-}
-
 body {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
     color: #ffffff;
-    background-color: #1E2126;
+    background-color: #191c24;
 }

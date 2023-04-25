@@ -1,111 +1,71 @@
-<body class="bg-dark">
+<div>
     <section>
-        <div class="row g-0">
-            <div class="col-lg-7 d-none d-lg-block">
-                <img class="rounded float-start img-1 min-vh-100">
-            </div>
-
-            <div class="col-lg-5 bg-dark d-flex flex-column align-items-end min-vh-100">
-
-                <div class="px-lg-5 pt-lg-4 pb-lg-3 p-4 mb-auto w-100">
-                    <img src="/assets/img/logo.png" id="logo" class="rounded mx-auto d-block" />
+      <div class="row g-0">
+        <div class="col-lg-7 d-none d-lg-block">
+        <img class="rounded float-start img-1 min-vh-100">
+        </div>  
+        <div class="col-lg-5 d-flex flex-column align-items-end min-vh-100">
+        <div class="align-self-center w-100 px-lg-5 py-lg-4 p-4">
+            <h2 class="font-weight-bold mb-4 text-center">Add new user</h2>
+            <form class="mb-5" [formGroup]="formulary" (ngSubmit)="onSubmit()">
+                <div class="form-group mb-4">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter name" formControlName="name">
+                    <p class="error" *ngIf="checkError('name', 'required')">This field is required.</p>
                 </div>
-
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-lg-8 offset-0 offset-lg-2">
-
-
-                            <form [formGroup]="formulary" (ngSubmit)="onSubmit()">
-
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter your name"
-                                        formControlName="name" style="color: white;">
-                                    <!-- <p class="error" *ngIf="checkError('name', 'required')">
-                        This field is required.
-                    </p> -->
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label>Surname</label>
-                                    <input type="text" class="form-control" placeholder="Enter your surname"
-                                        formControlName="surname" style="color: white;">
-                                    <!-- <p class="error" *ngIf="checkError('surname', 'required')">
-                        This field is required.
-                    </p> -->
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label>Birthdate</label>
-                                    <input type="date" class="form-control" placeholder="Enter your birthdate"
-                                        formControlName="birthdate" style="color: white;">
-                                    <!-- <p class="error" *ngIf="checkError('birthdate', 'required')">
-                        This field is required.
-                    </p> -->
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label>DNI</label>
-                                    <input type="text" class="form-control" placeholder="Enter your DNI"
-                                        formControlName="dni" style="color: white;">
-                                    <!-- <p class="error" *ngIf="checkError('dni', 'required')">
-                        This field is required.
-                    </p> -->
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label>Phone</label>
-                                    <input type="text" class="form-control" placeholder="Enter your phone"
-                                        formControlName="phone" style="color: white;">
-                                    <!-- <p class="error" *ngIf="checkError('phone', 'required')">
-                        This field is required.
-                    </p> -->
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label>Email</label>
-                                    <input type="email" class="form-control" placeholder="Enter your email"
-                                        formControlName="email" style="color: white;">
-                                    <!-- <p class="error" *ngIf="checkError('email', 'required')">
-                        This field is required.
-                    </p> -->
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label>Username</label>
-                                    <input type="text" class="form-control" placeholder="Enter your username"
-                                        formControlName="username" style="color: white;">
-                                    <!-- <p class="error" *ngIf="checkError('username', 'required')">
-                        This field is required.
-                    </p> -->
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Choose a password"
-                                        formControlName="password" style="color: white;">
-                                    <!-- <p class="error" *ngIf="checkError('password', 'required')">
-                        This field is required.
-                    </p> -->
-                                </div>
-                                <!-- <div class="form-group mb-3">
+                <div class="form-group mb-4">
+                    <label>Surname</label>
+                    <input type="text" class="form-control" placeholder="Enter surname" formControlName="surname">
+                    <p class="error" *ngIf="checkError('surname', 'required')">This field is required.</p>
+                </div>
+                <div class="form-group mb-4">
+                    <label>Date of birth</label>
+                    <input type="date" class="form-control" placeholder="Enter date of birth" formControlName="birthdate">
+                    <p class="error" *ngIf="checkError('birthdate', 'required')">This field is required.</p>
+                </div>
+                <div class="form-group mb-4">
+                    <label>DNI</label>
+                    <input type="text" class="form-control" placeholder="Enter DNI" formControlName="dni">
+                    <p class="error" *ngIf="checkError('dni', 'required')">This field is required.</p>
+                </div>
+                <div class="form-group mb-4">
+                    <label>Phone</label>
+                    <input type="text" class="form-control" placeholder="Enter number phone" formControlName="phone">
+                    <p class="error" *ngIf="checkError('phone', 'required')">This field is required.</p>
+                </div>
+                <div class="form-group mb-4">
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="Enter email account" formControlName="email">
+                    <p class="error" *ngIf="checkError('email', 'required')">This field is required.</p>
+                </div>
+                <div class="form-group mb-4">
+                    <label>Username</label>
+                    <input type="text" class="form-control" placeholder="Enter username" formControlName="username">
+                    <p class="error" *ngIf="checkError('username', 'required')">This field is required.</p>
+                </div>
+                <div class="form-group mb-4">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Choose a password" formControlName="password">
+                    <p class="error" *ngIf="checkError('password', 'required')">This field is required.</p>
+                </div>
+                <!-- <div class="form-group mb-4">
                     <label>Repeat your password</label>
-                    <input type="password" class="form-control" placeholder="Enter your password"
-                        formControlName="repeatpassword">
-                    <p class="error" *ngIf="checkError('password', 'required')">
-                        This field is required.
-                    </p>
+                    <input type="password" class="form-control" placeholder="Enter your password" formControlName="repeatpassword">
+                    <p class="error" *ngIf="checkError('password', 'required')">This field is required.</p>
                 </div> -->
-
-                                <label>What role are you?</label>
-                                <select class="form-select form-group mb-3" formControlName="role">
-
-                                    <option value="" disabled>Choose your role</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="mechanic">Mechanic</option>
-                                </select>
-                                <!-- <p class="error" *ngIf="checkError('role', 'required')">
-                    This field is required.
-                </p> -->
-
-                                <button type="submit" class="btn btn bg">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
+                <label>Select role</label>
+                <select class="form-select form-group mb-3" formControlName="role">
+                    <option value="" disabled>Select role</option>
+                    <option value="admin">Admin</option>
+                    <option value="mechanic">Mechanic</option>
+                </select>
+                <!-- <p class="error" *ngIf="checkError('role', 'required')">This field is required.</p> -->  
+                <button type="submit" class="btn w-100">SUBMIT</button>
+            </form>
+        </div>
+        </div>
+      </div>
+    </section>
+</div>
+  
+  <!-- Foto coche amarillo perteneciente a Mark Neal en Pexels: https://www.pexels.com/es-es/foto/coche-amarillo-2218915/ -->

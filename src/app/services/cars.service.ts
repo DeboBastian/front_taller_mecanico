@@ -22,6 +22,12 @@ export class CarsService {
     )
   }
 
+  updateCar(body: any) {
+    return firstValueFrom(
+      this.httpClient.put<any>(`${this.baseUrl}/${body.id}`, body)
+    )
+  }
+
   getById(id: number) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`))
   }
@@ -37,5 +43,11 @@ export class CarsService {
 
   getAllCars() {
     return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
+  }
+
+  update(values: any){
+    console.log(values);
+    
+    return firstValueFrom(this.httpClient.put<any>(`${this.baseUrl}/${values.id}`, values))
   }
 }

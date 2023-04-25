@@ -22,6 +22,7 @@ import { CardEmployeeComponent } from './components/card-employee/card-employee.
 import { EditReparationComponent } from './components/administration/edit-reparation/edit-reparation.component';
 import { EditAdminComponent } from './components/administration/edit-admin/edit-admin.component';
 import { EditClientComponent } from './components/edit-client/edit-client.component';
+import { UpdateCarComponent } from './components/administration/update-car/update-car.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/home" },
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: "clients/:id", component: CardClientComponent },
   { path: "clients/update/:id", component: EditClientComponent },
   { path: "cars/new", component: NewCarComponent },
+  { path: "cars/update/:id", component: UpdateCarComponent },
   { path: "cars", component: CarsComponent },
   { path: "cars/:id", component: CardCarComponent },
   { path: "**", redirectTo: "/home" },

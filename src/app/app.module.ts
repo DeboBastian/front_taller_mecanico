@@ -29,6 +29,8 @@ import { CardEmployeeComponent } from './components/card-employee/card-employee.
 import { EditAdminComponent } from './components/administration/edit-admin/edit-admin.component';
 import { EditReparationComponent } from './components/administration/edit-reparation/edit-reparation.component';
 import { EditClientComponent } from './components/edit-client/edit-client.component';
+import { UpdateCarComponent } from './components/administration/update-car/update-car.component';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { EditClientComponent } from './components/edit-client/edit-client.compon
     EditAdminComponent,
     EditReparationComponent,
     EditClientComponent,
+    UpdateCarComponent
   ],
 
   imports: [
