@@ -37,19 +37,29 @@ export class CardCarComponent {
     }
 
     this.clients = []
+    this.car
   }
 
   ngOnInit() {
     try {
-      this.activatedRoute.params.subscribe(async data => {
+        this.activatedRoute.params.subscribe(async data => {
         this.car = await this.carsService.getById(parseInt(data['id']));
         this.clients = await this.carsService.getByClient(parseInt(data['id']))
       })
-     
     } catch (error) {
       console.log(error)
     }
   }
+
+  // async ngOnInit(){
+  //   try {
+  //     const response = await this.carsService.getAllCars();
+  //     this.car = response.results; 
+  //   } catch (error) {
+  //     console.log(error);
+      
+  //   }
+  // }
 
   async onClickDelete(indice: number | undefined) {    
     if (indice) {
@@ -62,7 +72,9 @@ export class CardCarComponent {
     }  
     } 
     
-
+    updateCar(url: string){
+      this.router.navigate(['cars/update']);
+    }
   
 
   

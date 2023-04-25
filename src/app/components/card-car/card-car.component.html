@@ -11,6 +11,8 @@
         <p>Type of car: {{car.type}}</p>
         <p>Type of fuel: {{car.fuel}}</p>
         <p>Damages: {{car.damages}}</p>
+        <button class="btn btn-secondary" [routerLink]="['/cars', 'update', car.id]">Update</button>
+        <button class="btn btn-danger" (click)="onClickDelete(car.id)">Delete</button>
     </div>
     <div *ngFor="let client of clients" class="client">
         <h3>CLIENT OF THIS CAR</h3>
@@ -22,6 +24,4 @@
         <p>Address: {{client.address}}</p>
         <p>Card number: {{client.card_number}}</p>
     </div>
-    <button class="btn btn-secondary">Update</button>
-    <button class="btn btn-danger" (click)="onClickDelete(car.id)" [routerLink]="['/cars', car.id]">Delete</button>
 </div>
