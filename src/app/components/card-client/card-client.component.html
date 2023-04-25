@@ -10,9 +10,11 @@
             <p>Card number: {{client.card_number}}</p>
         </div>
         <button class="delete-icon" (click)="deleteClient(client)">Delete</button>
+        <button [routerLink]="['/clients', 'update', client.id]" class="update-icon">Update</button>
+
     </article>
 
-
+    <br>
 
     <div *ngFor="let car of cars" class="cars">
         <h3>CLIENT CARS</h3>

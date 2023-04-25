@@ -15,9 +15,6 @@ export class ClientsService {
     this.baseUrl = 'http://localhost:3000/api/clients'
   }
 
-
-
-
   getAllClients() {
     return firstValueFrom<any[]>(this.httpClient.get<any>(this.baseUrl))
   }
@@ -38,12 +35,23 @@ export class ClientsService {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/car/${id}`))
   }
 
+  getClientDetails(clientId: number) {
+    return this.httpClient.get(`${this.baseUrl}/${clientId}`);
+  }
+
   deleteClient(id: number) {
     return firstValueFrom<any>(
       this.httpClient.delete<any>(`${this.baseUrl}/${id}`)
     );
   }
 
+
+  updateClient(body: any) {
+    console.log(body)
+    return firstValueFrom(
+      this.httpClient.put<any>(`${this.baseUrl}/${body.id}`, body)
+    );
+  }
 }
 
 

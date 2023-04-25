@@ -19,3 +19,16 @@ p{
     display: inline-block;
     margin: 0 20px;
 }
+
+.update-icon {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 1000px;
+    display: inline-block;
+    margin: 0 20px;
+}

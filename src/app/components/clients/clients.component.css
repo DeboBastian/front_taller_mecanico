@@ -29,6 +29,7 @@ hr {
 
 
 article {
+    margin-left: 20px;
     display: inline-flexbox;
 
 }

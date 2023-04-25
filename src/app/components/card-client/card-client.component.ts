@@ -32,6 +32,7 @@ export class CardClientComponent {
       card_number: 0
     }
 
+
     this.cars = []
   }
 
@@ -55,4 +56,6 @@ export class CardClientComponent {
       this.location.back();
     }
   }
+
+
 }

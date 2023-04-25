@@ -28,6 +28,7 @@ import { EmployeesComponent } from './components/employees/employees.component';
 import { CardEmployeeComponent } from './components/card-employee/card-employee.component';
 import { EditAdminComponent } from './components/administration/edit-admin/edit-admin.component';
 import { EditReparationComponent } from './components/administration/edit-reparation/edit-reparation.component';
+import { EditClientComponent } from './components/edit-client/edit-client.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { EditReparationComponent } from './components/administration/edit-repara
     EmployeesComponent,
     CardEmployeeComponent,
     EditAdminComponent,
-    EditReparationComponent
+    EditReparationComponent,
+    EditClientComponent,
   ],
 
   imports: [
@@ -66,6 +68,6 @@ import { EditReparationComponent } from './components/administration/edit-repara
   providers: [],
   bootstrap: [AppComponent]
 })
-  
-  
+
+
 export class AppModule { }
