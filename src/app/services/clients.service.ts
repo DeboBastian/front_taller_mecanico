@@ -45,9 +45,11 @@ export class ClientsService {
     );
   }
 
-  updateClient(id: number, body: any) {
+
+  updateClient(body: any) {
+    console.log(body)
     return firstValueFrom(
-      this.httpClient.put<any>(`${this.baseUrl}/${id}`, body)
+      this.httpClient.put<any>(`${this.baseUrl}/${body.id}`, body)
     );
   }
 }
