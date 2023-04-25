@@ -9,69 +9,45 @@
                 <div class="form-group mb-3">
                     <label class="form-label">Name</label>
                     <input type="text" class="form-control" placeholder="Change name" formControlName="name">
-                    <!-- <p class="error" *ngIf="checkError('name', 'required')">
-                        This field is required.
-                    </p> -->
+
                 </div>
                 <div class="form-group mb-3">
                     <label>Surname</label>
                     <input type="text" class="form-control" placeholder="Change surname" formControlName="surname">
-                    <!-- <p class="error" *ngIf="checkError('surname', 'required')">
-                        This field is required.
-                    </p> -->
+
                 </div>
                 <div class="form-group mb-3">
                     <label>Birthdate</label>
                     <input type="date" class="form-control" placeholder="Change birthdate" formControlName="birthdate">
-                    <!-- <p class="error" *ngIf="checkError('birthdate', 'required')">
-                        This field is required.
-                    </p> -->
+
                 </div>
                 <div class="form-group mb-3">
                     <label>DNI</label>
                     <input type="text" class="form-control" placeholder="Change DNI" formControlName="dni">
-                    <!-- <p class="error" *ngIf="checkError('dni', 'required')">
-                        This field is required.
-                    </p> -->
+
                 </div>
                 <div class="form-group mb-3">
                     <label>Phone</label>
                     <input type="text" class="form-control" placeholder="Change phone number" formControlName="phone">
-                    <!-- <p class="error" *ngIf="checkError('phone', 'required')">
-                        This field is required.
-                    </p> -->
+
                 </div>
                 <div class="form-group mb-3">
                     <label>Email</label>
                     <input type="email" class="form-control" placeholder="Change email" formControlName="email">
-                    <!-- <p class="error" *ngIf="checkError('email', 'required')">
-                        This field is required.
-                    </p> -->
+
                 </div>
                 <div class="form-group mb-3">
                     <label>Username</label>
                     <input type="text" class="form-control" placeholder="Change the username"
                         formControlName="username">
-                    <!-- <p class="error" *ngIf="checkError('username', 'required')">
-                        This field is required.
-                    </p> -->
+
                 </div>
                 <div class="form-group mb-3">
                     <label>Password</label>
                     <input type="password" class="form-control" placeholder="Change the password"
                         formControlName="password">
-                    <!-- <p class="error" *ngIf="checkError('password', 'required')">
-                        This field is required.
-                    </p> -->
+
                 </div>
-                <!-- <div class="form-group mb-3">
-                    <label>Repeat your password</label>
-                    <input type="password" class="form-control" placeholder="Enter your password"
-                        formControlName="repeatpassword">
-                    <p class="error" *ngIf="checkError('password', 'required')">
-                        This field is required.
-                    </p>
-                </div> -->
 
 
 
@@ -81,3 +57,5 @@
     </div>
 
 </div>
+
+<i class="bi bi-arrow-left-circle-fill" [routerLink]="['/administration']"></i>

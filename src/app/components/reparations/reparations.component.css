@@ -174,20 +174,20 @@ color: #6c7293;
 }
 
 button{
-padding: 5px 10px 5px;
-background-color: #191c24;
-text-decoration: none;
-color: #84B6F4;
-border: 1px solid #84B6F4;
-border-radius: 4px;
-font-size: 15px;
-position: relative;
-width: 100%;
-margin-top: 10px;
-font-weight: 500;
+    margin: 20px;
 }
 
-button:hover{
-background-color: #84B6F4;
-color: #191C25;
+i{
+    font-size: 3rem;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.container{
+    margin-top: 40px;
+}
+
+strong{
+    font-weight: 600;
+    color: rgb(173, 173, 165);
 }

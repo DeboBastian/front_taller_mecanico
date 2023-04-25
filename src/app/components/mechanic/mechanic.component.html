@@ -1,37 +1,37 @@
 <!-- SIDEBAR -->
 <div class="row">
-<nav class="sidebar">
-    <ul class="nav">
+    <nav class="sidebar">
+        <ul class="nav">
 
-        <li class="nav-item menu-items">
-        <a class="nav-link" >
-            <span class="menu-icon">
-            <i class='bx bx-tachometer'></i>
-            </span>
-            <span class="menu-title">Dashboard</span>
-        </a>
-        </li>
-        
-        <li class="nav-item menu-items">
-        <a class="nav-link" routerLink="/home">
-            <span class="menu-icon">
-                <i class='bx bx-home-alt-2' ></i>
-            </span>
-            <span class="menu-title">Home</span>
-        </a>
-        </li>
-        
-        <li class="nav-item menu-items">
-        <a class="nav-link" routerLink="/home">
-            <span class="menu-icon">
-                <i class='bx bx-log-out'></i>
-            </span>
-            <span class="menu-title">Log out</span>
-        </a>
-        </li>
-    </ul>
-</nav>
-    
+            <li class="nav-item menu-items">
+                <a class="nav-link">
+                    <span class="menu-icon">
+                        <i class='bx bx-tachometer'></i>
+                    </span>
+                    <span class="menu-title">Dashboard</span>
+                </a>
+            </li>
+
+            <li class="nav-item menu-items">
+                <a class="nav-link" routerLink="/home">
+                    <span class="menu-icon">
+                        <i class='bx bx-home-alt-2'></i>
+                    </span>
+                    <span class="menu-title">Home</span>
+                </a>
+            </li>
+
+            <li class="nav-item menu-items">
+                <a class="nav-link" routerLink="/home">
+                    <span class="menu-icon">
+                        <i class='bx bx-log-out'></i>
+                    </span>
+                    <span class="menu-title">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
     <!-- REPARATIONS DETAILS -->
     <div class="main mt-5">
         <div class="topbar">
@@ -50,7 +50,7 @@
                                 <th>Type</th>
                                 <th>Reparation</th>
                                 <th>Price</th>
-                            </tr>                
+                            </tr>
                         </thead>
                         <tbody class="client" *ngFor="let reparation of reparations">
                             <tr>
@@ -61,15 +61,15 @@
                                 </select>
                                 <td>{{reparation.date}}</td>
                                 <td>{{reparation.cars_id}}</td>
-                                <td>{{reparation.type}}</td>
+                                <td>{{reparation.type_rep}}</td>
                                 <td>{{reparation.reparation}}</td>
-                                <td>{{reparation.price}}€</td>              
+                                <td>{{reparation.price}}€</td>
                                 <button>Send</button>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div> 
-        </div> 
-    </div> 
+            </div>
+        </div>
+    </div>
 </div>

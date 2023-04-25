@@ -3,3 +3,19 @@ h1{
 }label{
     color: white;
 }
+
+i{
+    font-size: 3rem;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 100px;
+   
+}
+
+
+h1{
+    text-align: center;
+    color: gray;
+    margin-top: 30px;
+    padding: 20px;
+}

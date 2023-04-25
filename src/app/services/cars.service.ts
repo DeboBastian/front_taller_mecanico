@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 
 
@@ -17,6 +17,11 @@ export class CarsService {
   }
 
   registerCar(body: any) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom(
       this.httpClient.post<any>(this.baseUrl, body)
     )
@@ -29,19 +34,42 @@ export class CarsService {
   }
 
   getById(id: number) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`))
   }
 
+
   getByClient(id: number) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/client/${id}`))
   }
  
-  deleteById(id: number){
+
+  deleteById(id: number) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     let url = `${this.baseUrl}/${id}`;
     return firstValueFrom(this.httpClient.delete<any>(url))
   }
 
+
   getAllCars() {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
   }
 

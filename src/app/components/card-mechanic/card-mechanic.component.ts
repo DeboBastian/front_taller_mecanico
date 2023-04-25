@@ -1,6 +1,6 @@
+
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Reparation } from 'src/app/interfaces/reparation.interface';
 import { User } from 'src/app/interfaces/user.interface';
 import { MechanicsService } from 'src/app/services/mechanics.service';
 import { ReparationsService } from 'src/app/services/reparations.service';
@@ -12,7 +12,7 @@ import { ReparationsService } from 'src/app/services/reparations.service';
 })
 export class CardMechanicComponent {
   mechanic: User
-  reparations: Reparation[]
+  reparations: any;
 
   constructor(
     private mechanicService: MechanicsService,
@@ -35,7 +35,6 @@ export class CardMechanicComponent {
     }
 
     this.reparations = []
-
     }
   
 
@@ -44,9 +43,10 @@ export class CardMechanicComponent {
     try {
       this.activatedRoute.params.subscribe(async data => {
         this.mechanic = await this.mechanicService.getById(parseInt(data['id']));
-        
+    
         this.reparations = await this.reparationsService.getByUsers(parseInt(data['id']))
-        
+        console.log(this.reparations)
+
       })
 
     } catch (error) {

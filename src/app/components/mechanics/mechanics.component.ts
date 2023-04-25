@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Mechanic } from 'src/app/interfaces/mechanic.interface';
 import { User } from 'src/app/interfaces/user.interface';
 import { MechanicsService } from 'src/app/services/mechanics.service';
 

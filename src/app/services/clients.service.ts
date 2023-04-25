@@ -16,22 +16,42 @@ export class ClientsService {
   }
 
   getAllClients() {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom<any[]>(this.httpClient.get<any>(this.baseUrl))
   }
 
 
   registerNewClient(body: any) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom(
       this.httpClient.post<any>(this.baseUrl, body)
     );
   }
 
   getById(id: number) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/${id}`))
   }
 
 
   getByClient(id: number) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/car/${id}`))
   }
 
@@ -40,11 +60,15 @@ export class ClientsService {
   }
 
   deleteClient(id: number) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom<any>(
       this.httpClient.delete<any>(`${this.baseUrl}/${id}`)
     );
   }
-
 
   updateClient(body: any) {
     console.log(body)
@@ -53,8 +77,6 @@ export class ClientsService {
     );
   }
 }
-
-
 
 
 

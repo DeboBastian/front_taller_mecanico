@@ -61,5 +61,23 @@ img {
     background-image: url('/assets/img/asphalt-02.jpg');
     background-size: cover;
     background-position: center;
-    height: 100%;
+    height: 110%;
+}
+
+i{
+    font-size: 3rem;
+    padding: 20px;
+    cursor: pointer;
+}
+
+input.ng-valid.ng-touched {
+    border-color: lightgreen;
+}
+
+input.ng-invalid.ng-touched {
+    border-color: tomato;
+}
+
+.error {
+    color: tomato;
 }

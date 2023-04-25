@@ -7,6 +7,8 @@ import { CarsService } from 'src/app/services/cars.service';
 import { MechanicsService } from 'src/app/services/mechanics.service';
 import { ReparationsService } from 'src/app/services/reparations.service';
 import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-new-reparation',
@@ -29,8 +31,8 @@ export class NewReparationComponent {
     this.cars = []
     this.users = []
     this.formulary = new FormGroup({
-      
-      type: new FormControl(),
+
+      type_rep: new FormControl(),
       reparation: new FormControl(),
       price: new FormControl(),
       users_id: new FormControl(),
@@ -43,11 +45,11 @@ export class NewReparationComponent {
     try {
       this.cars = await this.carsService.getAllCars()
       this.users = await this.mechanicsService.getAllMechanics()
-      
+
     } catch (error) {
       console.log(error)
     }
-    
+
   }
 
 
@@ -55,8 +57,11 @@ export class NewReparationComponent {
 
     try {
       const response = await this.reparationsService.createReparation(this.formulary.value)
-      
       this.router.navigate(['/reparations'])
+      if (response.fatal) {
+        await Swal.fire('Error in the registration of a new reparation', '', 'error');
+      }
+
     } catch (error) {
       console.log(error)
     }
