@@ -13,15 +13,15 @@ import Swal from 'sweetalert2';
 })
 export class RegisterComponent {
   formulary: FormGroup;
- 
+
 
   constructor(
-    
+
     private usersService: UsersService,
     private router: Router
   ) {
 
-    
+
     this.formulary = new FormGroup({
 
       name: new FormControl(null, [
@@ -36,16 +36,16 @@ export class RegisterComponent {
       birthdate: new FormControl(null, [
         Validators.required
       ]),
- 
+
       dni: new FormControl(null, [
         Validators.required,
         this.dniValidator
       ]),
- 
+
       phone: new FormControl(null, [
         Validators.required
       ]),
-     
+
       email: new FormControl(null, [
         Validators.required,
         Validators.pattern("/^\w + ([\.-] ?\w +) *@\w + ([\.-] ?\w +)* (\.\w{ 2, 3 }) +$ /")
@@ -74,11 +74,11 @@ export class RegisterComponent {
     })
 
   }
-  
+
 
 
   dniValidator(control: AbstractControl) {
-   
+
     const dni: string = control.value;
     const listaLetras = 'TRWAGMYFPDXBNJZSQVHLCKET';
 
@@ -91,7 +91,7 @@ export class RegisterComponent {
 
       if (letra.toUpperCase() !== listaLetras.at(resultado)) {
         return { dnivalidator: 'La letra no coincide' };
-      } 
+      }
       return null;
     }
     return { dnivalidator: 'El formato del DNI es incorrecto' }
@@ -99,9 +99,9 @@ export class RegisterComponent {
 
 
 
- 
+
   passwordValidator(form: AbstractControl) {
-    
+
     const password = form.get('password')?.value;
     const repeatPassword = form.get('repeatpassword')?.value;
 
@@ -114,14 +114,14 @@ export class RegisterComponent {
     return null;
   }
 
-  
+
   async onSubmit() {
 
     try {
       const newUser = await this.usersService.register(this.formulary.value)
-      
-      await Swal.fire('New employeer','Welcame with us!', 'success');
-    
+
+      await Swal.fire('New employeer', 'Welcame with us!', 'success');
+
       this.router.navigate(['/home'])
     } catch (error) {
       console.log(error)
@@ -129,9 +129,9 @@ export class RegisterComponent {
   }
 
 
-checkError(control: string, validator: string) {
-  return this.formulary.get(control)?.hasError(validator) && this.formulary.get(control)?.touched
-}
+  checkError(control: string, validator: string) {
+    return this.formulary.get(control)?.hasError(validator) && this.formulary.get(control)?.touched
+  }
 
 }
 
