@@ -11,7 +11,7 @@ import { ReparationsService } from 'src/app/services/reparations.service';
 })
 export class CardReparationComponent {
 
-  reparation: Reparation
+  reparation: any
   mechanics: User[]
 
   constructor(
@@ -20,15 +20,16 @@ export class CardReparationComponent {
     private router: Router
   ) {
     this.reparation = {
-      id: 0,
-      date: new Date,
-      status: "",
-      type: "",
-      reparation: "",
-      price: "",
-      bill_number: "",
-      users_id: 0,
-      cars_id: 0
+      // id: 0,
+      // dstatus: "",
+      // type_rep: "",
+      // ate: new Date,
+      // reparation: "",
+      // price: "",
+      // bill_number: "",
+      // users_id: 0,
+      // cars_id: 0
+    
     }
 
     this.mechanics = []
@@ -38,6 +39,7 @@ export class CardReparationComponent {
     try {
       this.activatedRoute.params.subscribe(async data => {
         this.reparation = await this.reparationsService.getById(parseInt(data['id']));
+        console.log(this.reparation)
         this.mechanics = await this.reparationsService.mechanicForReparations(parseInt(data['id']))
       })
 

@@ -1,8 +1,10 @@
 import { User } from './../../../interfaces/user.interface';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'login',
@@ -21,11 +23,9 @@ export class LoginComponent {
   ) {
     
     this.formulary = new FormGroup({
-      dni: new FormControl,
-        // (null, [Validators.required]),
-      email: new FormControl(null, [Validators.required]),
+      dni: new FormControl(null, [this.dniValidator]),
+      email: new FormControl(null, [Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]),
       password: new FormControl(null, [Validators.required])
-      
     })
   }
 
@@ -47,7 +47,9 @@ export class LoginComponent {
           this.router.navigate(['/administration'])
         }
       
-      
+      if (response.fatal) {
+        await Swal.fire('Error in login', 'Password, DNI or mail are not correct', 'error');
+      } 
     } catch (error) {
       console.log(error)
     }
@@ -57,5 +59,27 @@ export class LoginComponent {
 checkError(control: string, validator: string) {
  return this.formulary.get(control)?.hasError(validator) && this.formulary.get(control)?.touched
 }
+
+  
+
+  dniValidator(control: AbstractControl) {
+
+    const dni: string = control.value;
+    const listaLetras = 'TRWAGMYFPDXBNJZSQVHLCKET';
+
+    if (!dni) return null;
+    if (/^\d{8}[a-zA-Z]$/.test(dni)) {
+      const numero = dni.substring(0, dni.length - 1);
+      const letra = dni.substring(dni.length - 1);
+
+      const resultado = parseInt(numero) % 23;
+
+      if (letra.toUpperCase() !== listaLetras.at(resultado)) {
+        return { dnivalidator: 'The letter of DNI is wrong' };
+      }
+      return null;
+    }
+    return { dnivalidator: 'Format of DNI is not correct' }
+  }
 
 }

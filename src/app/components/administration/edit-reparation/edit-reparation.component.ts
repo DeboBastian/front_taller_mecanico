@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { CarsService } from 'src/app/services/cars.service';
 import { MechanicsService } from 'src/app/services/mechanics.service';
 import { ReparationsService } from 'src/app/services/reparations.service';
 import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-edit-reparation',
@@ -24,14 +26,14 @@ export class EditReparationComponent {
   ) {
     this.users = []
     this.formulary = new FormGroup({
-      date: new FormControl(),
-      status: new FormControl(),
-      type: new FormControl(),
-      reparation: new FormControl(),
-      price: new FormControl(),
-      bill_number: new FormControl(),
-      users_id: new FormControl(),
-      cars_id: new FormControl()
+      date: new FormControl(null, [Validators.required]),
+      status: new FormControl("", [Validators.required]),
+      type_rep: new FormControl("", [Validators.required]),
+      reparation: new FormControl(null, [Validators.required]),
+      price: new FormControl(null, [Validators.required]),
+      bill_number: new FormControl(null, [Validators.required]),
+      users_id: new FormControl("", [Validators.required]),
+      cars_id: new FormControl("", [Validators.required])
     })
   }
 
@@ -51,9 +53,12 @@ export class EditReparationComponent {
 
   async onSubmit() {
     this.activatedRoute.params.subscribe(async params => {
-      await this.reparationsService.updateReparation(this.formulary.value, parseInt(params['id']));
-      
-      this.router.navigate(['/reparations'])
+      const response = await this.reparationsService.updateReparation(this.formulary.value, parseInt(params['id']));
+       this.router.navigate(['/reparations'])
+      if (response.fatal) {
+        await Swal.fire('Update failed ', '', 'error');
+      } 
+     
     })
 
     

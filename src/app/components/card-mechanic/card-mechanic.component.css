@@ -1,7 +1,4 @@
-.container{
-    display: flex;
-    justify-content: space-between;
-}
+
 
 p{
     color: white;
@@ -14,3 +11,33 @@ h4{
 h3{
     color: white;
 }
+
+i{
+    font-size: 3rem;
+    padding: 20px;
+    cursor: pointer;
+}
+
+
+.container{
+    margin-top: 40px;
+}
+
+strong{
+    font-weight: 500;
+    color: rgb(237, 225, 174);
+  
+}
+
+
+
+h3{
+    padding: 20px;
+}
+
+.mechanic{
+    margin: auto;
+   
+    text-align: center;
+} 
+

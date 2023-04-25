@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-edit-admin',
@@ -19,8 +21,7 @@ export class EditAdminComponent {
     this.formulary = new FormGroup({
 
       name: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(3)
+        Validators.required
       ]),
 
       surname: new FormControl(null, [
@@ -33,8 +34,7 @@ export class EditAdminComponent {
 
 
       dni: new FormControl(null, [
-        Validators.required,
-      
+        Validators.required
       ]),
 
       phone: new FormControl(null, [
@@ -42,19 +42,15 @@ export class EditAdminComponent {
       ]),
 
       email: new FormControl(null, [
-        Validators.required,
-        // Validators.pattern("/^\w + ([\.-] ?\w +) *@\w + ([\.-] ?\w +)* (\.\w{ 2, 3 }) +$ /")
+        Validators.required
       ]),
 
       username: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(12)
+        Validators.required
       ]),
 
       password: new FormControl(null, [
-        Validators.required,
-        // Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$/)
+        Validators.required
       ]),
     })
   }
@@ -80,9 +76,12 @@ export class EditAdminComponent {
   async onSubmit() {
     this.activatedRoute.params.subscribe(async params => {
       
-      await this.usersService.updateAdminEmployeer(this.formulary.value, parseInt(params['id']));
-
+      const response = await this.usersService.updateAdminEmployeer(this.formulary.value, parseInt(params['id']));
       this.router.navigate(['/admins'])
+      if (response.fatal) {
+        await Swal.fire('Update failed ', '', 'error');
+      } 
+      
     })
 
 

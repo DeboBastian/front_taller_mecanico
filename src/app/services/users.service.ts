@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import JwtDecode from 'jwt-decode';
@@ -18,14 +18,21 @@ export class UsersService {
   }
 
 
-  getAllUsers() {
-    return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
-  }
+  // getAllUsers() {
+  //   return firstValueFrom(this.httpClient.get<any>(this.baseUrl))
+  // }
 
 
   register(body: any) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
+    
     return firstValueFrom(
       this.httpClient.post<any>(`${this.baseUrl}/register`, body)
+      
     )
   }
 
@@ -41,7 +48,23 @@ export class UsersService {
     return JwtDecode<any>(localStorage.getItem('token_key')!)
   }
 
+
+  isLogged(): boolean {
+    if (localStorage.getItem('token_key')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
+
   updateAdminEmployeer(values: any, id: number) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom(
       this.httpClient.put<any>(`${this.baseUrl}/edit/${id}`, values)
     );
@@ -49,16 +72,31 @@ export class UsersService {
 
   
   deleteAdmin(id: number) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom(this.httpClient.delete<any>(`${this.baseUrl}/admin/${id}`))
   }
 
   
   getAllAdmin() {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/admins`))
   }
 
 
   getAdminById(id: number) {
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': localStorage.getItem('token_key')!
+    //   })
+    // }
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/admins/${id}`))
   }
 

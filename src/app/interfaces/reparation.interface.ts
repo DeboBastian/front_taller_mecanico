@@ -3,7 +3,7 @@ export interface Reparation {
     id?: number;
     date: Date,
     status: string;
-    type: string;
+    type_rep: string;
     reparation: string;
     price: string;
     bill_number?: string;

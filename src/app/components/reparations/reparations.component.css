@@ -9,3 +9,18 @@ hr{
 button{
     margin: 20px;
 }
+
+i{
+    font-size: 3rem;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.container{
+    margin-top: 40px;
+}
+
+strong{
+    font-weight: 600;
+    color: rgb(173, 173, 165);
+}
