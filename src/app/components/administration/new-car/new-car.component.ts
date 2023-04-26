@@ -54,7 +54,8 @@ export class NewCarComponent {
 
     try {
       const response = await this.carsService.registerCar(this.formulary.value)
-            this.router.navigate(['/cars'])
+      this.router.navigate(['/cars'])
+      console.log(response)
       if (response.fatal) {
        
         await Swal.fire('Error in the registration of a new car', '', 'error');

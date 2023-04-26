@@ -13,14 +13,14 @@
     <hr class="border-light">
     <div class="row">
         <article *ngFor="let reparation of reparations" class="col-12 col-md-6 col-lg-4">
-            <div class="card border-light bg-transparent p-3 pt-4">
-                <p> Chasis: {{reparation.chasis}}</p>
-                <p> Identification: {{reparation.registration}}</p>
-                <p> {{reparation.brand}} {{reparation.model}}</p>
-                <p>Type of reparation: {{reparation.type_rep}}</p>
-                <p>More about: {{reparation.reparation}}</p>
-                <p>Status: {{reparation.status}}</p>
-                <p>Start Date of this reparation: {{reparation.date | date:"dd-MM-yyyy"}}</p>
+            <div class="card border-light bg-transparent p-3 pt-4 mb-3">
+                <p> <strong>Chasis: </strong> {{reparation.chasis}}</p>
+                <p> <strong>Identification:</strong> {{reparation.registration}}</p>
+                <p> <strong>{{reparation.brand}} {{reparation.model}}</strong></p>
+                <p> <strong> Type of reparation: </strong>{{reparation.type_rep}}</p>
+                <p> <strong>More about:</strong> {{reparation.reparation}}</p>
+                <p><strong>Status:</strong> {{reparation.status}}</p>
+                <p><strong>Start Date of this reparation:</strong> {{reparation.date | date:"dd-MM-yyyy"}}</p>
             </div>
         </article>
 
