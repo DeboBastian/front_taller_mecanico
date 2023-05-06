@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClientsService } from 'src/app/services/clients.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-new-client',
@@ -17,13 +19,13 @@ export class NewClientComponent {
     private router: Router
   ) {
     this.formulary = new FormGroup({
-      name: new FormControl(),
-      surname: new FormControl(),
-      email: new FormControl(),
-      phone: new FormControl(),
-      dni: new FormControl(),
-      address: new FormControl(),
-      card_number: new FormControl()
+      name: new FormControl(null, [Validators.required]),
+      surname: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required]),
+      phone: new FormControl(null, [Validators.required]),
+      dni: new FormControl(null, [Validators.required]),
+      address: new FormControl(null, [Validators.required]),
+      card_number: new FormControl(null, [Validators.required])
     })
   }
 
@@ -31,7 +33,11 @@ export class NewClientComponent {
 
     try {
       const response = await this.clientsService.registerNewClient(this.formulary.value)
-      this.router.navigate(['/clients'])
+       this.router.navigate(['/clients'])
+      if (response.fatal) {
+        await Swal.fire('Error in the registration of a new client', '', 'error');
+      } 
+     
     } catch (error) {
       console.log(error)
     }

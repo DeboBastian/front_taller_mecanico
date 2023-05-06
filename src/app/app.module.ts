@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,6 +29,9 @@ import { CardEmployeeComponent } from './components/card-employee/card-employee.
 import { EditAdminComponent } from './components/administration/edit-admin/edit-admin.component';
 import { EditReparationComponent } from './components/administration/edit-reparation/edit-reparation.component';
 import { EditClientComponent } from './components/edit-client/edit-client.component';
+import { UpdateCarComponent } from './components/administration/update-car/update-car.component';
+
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,7 @@ import { EditClientComponent } from './components/edit-client/edit-client.compon
     EditAdminComponent,
     EditReparationComponent,
     EditClientComponent,
+    UpdateCarComponent
   ],
 
   imports: [
@@ -65,7 +69,9 @@ import { EditClientComponent } from './components/edit-client/edit-client.compon
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 

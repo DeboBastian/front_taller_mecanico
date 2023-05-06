@@ -1,6 +1,6 @@
 import { ReparationsComponent } from './components/reparations/reparations.component';
 
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/users/login/login.component';
@@ -22,35 +22,121 @@ import { CardEmployeeComponent } from './components/card-employee/card-employee.
 import { EditReparationComponent } from './components/administration/edit-reparation/edit-reparation.component';
 import { EditAdminComponent } from './components/administration/edit-admin/edit-admin.component';
 import { EditClientComponent } from './components/edit-client/edit-client.component';
+import { UpdateCarComponent } from './components/administration/update-car/update-car.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "/home" },
+  {
+    path: '', pathMatch:'full', redirectTo: "home"
+  },
   { path: "home", component: HomeComponent },
   { path: "login", component: LoginComponent },
-  { path: "register", component: RegisterComponent },
-  { path: "administration", component: AdministrationComponent },
-  { path: "admins", component: EmployeesComponent },
-  { path: "admins/:id", component: CardEmployeeComponent },
-  { path: "users/edit/:id", component: EditAdminComponent },
-  { path: "mechanic", component: MechanicComponent },
-  { path: "clients/new", component: NewClientComponent },
-  { path: "clients", component: ClientsComponent },
-  { path: "mechanics", component: MechanicsComponent },
-  { path: "mechanics/:id", component: CardMechanicComponent },
-  { path: "reparations/new", component: NewReparationComponent },
-  { path: "reparations", component: ReparationsComponent },
-  { path: "reparations/:id", component: CardReparationComponent },
-  { path: "reparations/edit/:id", component: EditReparationComponent },
-  { path: "clients/new", component: NewClientComponent },
-  { path: "clients", component: ClientsComponent },
-  { path: "clients/:id", component: CardClientComponent },
-  { path: "clients/update/:id", component: EditClientComponent },
-  { path: "cars/new", component: NewCarComponent },
-  { path: "cars", component: CarsComponent },
-  { path: "cars/:id", component: CardCarComponent },
+  { path: "register", component: RegisterComponent , canActivate: [
+    () => inject(LoginGuard).canActivate()
+  ]},
+  {
+    path: "administration", component: AdministrationComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ] },
+  {
+    path: "admins", component: EmployeesComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "admins/:id", component: CardEmployeeComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "users/edit/:id", component: EditAdminComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "mechanic", component: MechanicComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "clients/new", component: NewClientComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ] },
+    
+  {
+    path: "clients", component: ClientsComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "clients/update/:id", component: EditClientComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ] },
+  {
+    path: "mechanics", component: MechanicsComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ] },
+  {
+    path: "mechanics/:id", component: CardMechanicComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "reparations/new", component: NewReparationComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "reparations", component: ReparationsComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "reparations/:id", component: CardReparationComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ] },
+  {
+    path: "reparations/edit/:id", component: EditReparationComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "clients/new", component: NewClientComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "clients", component: ClientsComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ] },
+  {
+    path: "clients/:id", component: CardClientComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ] },
+  {
+    path: "cars/new", component: NewCarComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ] },
+  {
+    path: "cars", component: CarsComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "cars/:id", component: CardCarComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+},
+  {
+    path: "cars/update/:id", component: UpdateCarComponent, canActivate: [
+      () => inject(LoginGuard).canActivate()
+    ]
+  },
+    
+  
   { path: "**", redirectTo: "/home" },
 ];
-
+ 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

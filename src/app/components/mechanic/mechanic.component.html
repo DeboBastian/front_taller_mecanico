@@ -1,125 +1,75 @@
-<!-- FAVICON -->
-<link rel="shortcut icon" href="./assets/img/favicon-s.png" type="image/x-icon">
+<!-- SIDEBAR -->
+<div class="row">
+    <nav class="sidebar">
+        <ul class="nav">
 
-<!-- BOXICONS -->
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+            <li class="nav-item menu-items">
+                <a class="nav-link">
+                    <span class="menu-icon">
+                        <i class='bx bx-tachometer'></i>
+                    </span>
+                    <span class="menu-title">Dashboard</span>
+                </a>
+            </li>
 
-<!-- NAVIGATION -->
-<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <li class="nav-item menu-items">
+                <a class="nav-link" routerLink="/home">
+                    <span class="menu-icon">
+                        <i class='bx bx-home-alt-2'></i>
+                    </span>
+                    <span class="menu-title">Home</span>
+                </a>
+            </li>
 
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a class="nav-link align-middle px-0">
-                            <span class="active" class="ms-1 d-none d-sm-inline">Dashboard</span>
-                        </a>
-                        <button routerLink="/cars" type="button" class="btn btn-outline-secondary">CARS</button>
-                        <button routerLink="/reparations" type="button"
-                            class="btn btn-outline-secondary">REPARATIONS</button>
-                        <button routerLink="/mechanics" type="button"
-                            class="btn btn-outline-secondary">MECHANICS</button>
-                    </li>
-                    <li>
-                        <a routerLink="/home" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <span class="ms-1 d-none d-sm-inline">Home</span> </a>
-                    </li>
-
-                    <!-- Hay que poner un método que elimine los datos del usuario logeado cuando se vaya -->
-                    <li>
-                        <a routerLink="/home" class="nav-link px-0 align-middle">
-                            <span class="ms-1 d-none d-sm-inline">Logout</span> </a>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<!-- MAIN -->
-
-<div class="main">
-    <div class="topbar">
-        <div class="search">
-            <input class="form-control" type="text" name="search" autocomplete="off"
-                placeholder=" Search by vehicle or customer">
-            <button class="btn-search">SEARCH</button>
-        </div>
-    </div>
+            <li class="nav-item menu-items">
+                <a class="nav-link" routerLink="/home">
+                    <span class="menu-icon">
+                        <i class='bx bx-log-out'></i>
+                    </span>
+                    <span class="menu-title">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
     <!-- REPARATIONS DETAILS -->
-
-    <div class="details">
-        <div class="recentOrders">
-            <div class="cardHeader">
-                <h2>reparation orders</h2>
-                <a href="#" class="btn">View All</a>
+    <div class="main mt-5">
+        <div class="topbar">
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>reparation orders</h2>
+                        <a routerLink="/reparations" type="button" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr class="menu">
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Car</th>
+                                <th>Type</th>
+                                <th>Reparation</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody class="client" *ngFor="let reparation of reparations">
+                            <tr>
+                                <select class="form-select">
+                                    <option value="pending" class="status_pending">Pending</option>
+                                    <option value="revised" class="status_in-progress">In progress</option>
+                                    <option value="revised" class="status_repaired">Repaired</option>
+                                </select>
+                                <td>{{reparation.date}}</td>
+                                <td>{{reparation.cars_id}}</td>
+                                <td>{{reparation.type_rep}}</td>
+                                <td>{{reparation.reparation}}</td>
+                                <td>{{reparation.price}}€</td>
+                                <button>Send</button>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
-            <table>
-                <thead>
-                    <tr class="menu">
-                        <th>Date</th>
-                        <th>Reparation</th>
-                        <th>Car</th>
-                        <th>Mechanic</th>
-                        <th>Type</th>
-                        <th>Price</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <!-- <tr *ngFor="let reparation of reparations">
-                        <td>{{reparation.date}}</td>
-                        <td>{{reparation.reparation}}</td>
-                        <td>{{reparation.car}}</td>
-                        <td>{{reparation.mechanic}}</td>
-                        <td>{{reparation.type}}</td>
-                        <td>{{reparation.price}}</td>
-                        <select class="form-select">
-                            <option value="pending" class="status_pending">Pending</option>
-                            <option value="revised" class="status_in-progress">In progress</option>
-                            <option value="revised" class="status_repaired">Repaired</option>
-                        </select>
-                        <button>Send</button>
-                    </tr> -->
-
-                    <tr>
-                        <td>Date</td>
-                        <td>Reparation</td>
-                        <td>Kia Sportage</td>
-                        <td>Antonio Rodriguez</td>
-                        <td>Mechanic</td>
-                        <td>100€</td>
-                        <select class="form-select">
-                            <option value="pending" class="status_pending">Pending</option>
-                            <option value="revised" class="status_in-progress">In progress</option>
-                            <option value="revised" class="status_repaired">Repaired</option>
-                        </select>
-                        <button>Send</button>
-                    </tr>
-
-                    <tr>
-                        <td>Date</td>
-                        <td>Reparation</td>
-                        <td>MG Marvel R</td>
-                        <td>Daniel Frieros</td>
-                        <td>Wheels</td>
-                        <td>90€</td>
-                        <select class="form-select">
-                            <option value="pending" class="status_pending">Pending</option>
-                            <option value="revised" class="status_in-progress">In progress</option>
-                            <option value="revised" class="status_repaired">Repaired</option>
-                        </select>
-                        <button>Send</button>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
-
 </div>

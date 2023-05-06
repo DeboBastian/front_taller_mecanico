@@ -1,9 +1,11 @@
 import { ClientsService } from 'src/app/services/clients.service';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Client } from 'src/app/interfaces/client.interface';
 import { CarsService } from 'src/app/services/cars.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'new-car',
@@ -23,18 +25,18 @@ export class NewCarComponent {
   ) {
     this.clients = []
     this.formulary = new FormGroup({
-      chasis: new FormControl,
-      registration: new FormControl,
-      brand: new FormControl,
-      model: new FormControl,
-      color: new FormControl,
-      km: new FormControl,
-      year: new FormControl,
-      doors: new FormControl,
-      type: new FormControl,
-      fuel: new FormControl,
-      damages: new FormControl,
-      clients_id: new FormControl
+      chasis: new FormControl(null, [Validators.required]),
+      registration: new FormControl(null, [Validators.required]),
+      brand: new FormControl(null, [Validators.required]),
+      model: new FormControl(null, [Validators.required]),
+      color: new FormControl(null, [Validators.required]),
+      km: new FormControl(null, [Validators.required]),
+      year: new FormControl(null, [Validators.required]),
+      doors: new FormControl(null, [Validators.required]),
+      type: new FormControl("", [Validators.required]),
+      fuel: new FormControl("", [Validators.required]),
+      damages: new FormControl(null, [Validators.required]),
+      clients_id: new FormControl("", [Validators.required])
     })
   }
 
@@ -52,8 +54,13 @@ export class NewCarComponent {
 
     try {
       const response = await this.carsService.registerCar(this.formulary.value)
-
       this.router.navigate(['/cars'])
+      console.log(response)
+      if (response.fatal) {
+       
+        await Swal.fire('Error in the registration of a new car', '', 'error');
+      } 
+
     } catch (error) {
       console.log(error)
     }

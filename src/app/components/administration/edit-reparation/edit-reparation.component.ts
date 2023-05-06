@@ -26,23 +26,28 @@ export class EditReparationComponent {
     this.formulary = new FormGroup({
       date: new FormControl(),
       status: new FormControl(),
-      type: new FormControl(),
+      type_rep: new FormControl(),
       reparation: new FormControl(),
       price: new FormControl(),
       bill_number: new FormControl(),
       users_id: new FormControl(),
-      cars_id: new FormControl()
+      cars_id: new FormControl(),
+      chasis: new FormControl()
+    
     })
   }
 
 
   ngOnInit() {
-    
+
     this.activatedRoute.params.subscribe(async params => {
-      
+
       const res = await this.reparationsService.getById(parseInt(params['id']));
-      
+
       delete res.id;
+      delete res.brand;
+      delete res.model;
+      console.log(res)
       this.formulary.setValue(res);
       this.users = await this.mechanicsService.getAllMechanics()
     });
@@ -52,11 +57,11 @@ export class EditReparationComponent {
   async onSubmit() {
     this.activatedRoute.params.subscribe(async params => {
       await this.reparationsService.updateReparation(this.formulary.value, parseInt(params['id']));
-      
+
       this.router.navigate(['/reparations'])
     })
 
-    
+
   }
 
 

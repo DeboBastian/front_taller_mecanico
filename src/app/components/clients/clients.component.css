@@ -14,7 +14,7 @@ hr {
 }
 
 
-.boton-detail {
+/* .boton-detail {
     background-color: rgb(140, 113, 109);
     color: white;
     font-weight: bold;
@@ -25,6 +25,18 @@ hr {
     margin-left: 1000px;
     display: inline-block;
     margin: 0 20px;
+} */
+
+
+button{
+    margin: 20px;
+}
+
+
+i{
+    font-size: 3rem;
+    padding: 20px;
+    cursor: pointer;
 }
 
 
@@ -38,4 +50,13 @@ article div {
     display: flex;
     flex-direction: column;
     align-items: left;
+}
+
+.container{
+    margin-top: 40px;
+}
+
+strong{
+    font-weight: 600;
+    color: rgb(173, 173, 165);
 }

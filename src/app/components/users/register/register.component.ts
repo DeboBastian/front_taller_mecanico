@@ -43,12 +43,14 @@ export class RegisterComponent {
       ]),
 
       phone: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.minLength(9)
+
       ]),
 
       email: new FormControl(null, [
         Validators.required,
-        Validators.pattern("/^\w + ([\.-] ?\w +) *@\w + ([\.-] ?\w +)* (\.\w{ 2, 3 }) +$ /")
+        Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
       ]),
 
       username: new FormControl(null, [
@@ -57,21 +59,19 @@ export class RegisterComponent {
         Validators.maxLength(12)
       ]),
 
+      role: new FormControl("", [
+        Validators.required
+      ]),
+
       password: new FormControl(null, [
         Validators.required,
         Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$/)
       ]),
 
-      // repeatpassword: new FormControl(null, [
-      //   Validators.required,
-      //   this.passwordValidator
-      // ]),
-
-      role: new FormControl("", [
-        Validators.required
-      ])
-
-    })
+      repeat_password: new FormControl()
+    }, [
+      this.passwordValidator
+    ]);
 
   }
 
@@ -90,11 +90,13 @@ export class RegisterComponent {
       const resultado = parseInt(numero) % 23;
 
       if (letra.toUpperCase() !== listaLetras.at(resultado)) {
-        return { dnivalidator: 'La letra no coincide' };
+        return {
+          dnivalidator: 'Letter of DNI is wrong'
+        };
       }
       return null;
     }
-    return { dnivalidator: 'El formato del DNI es incorrecto' }
+    return { dnivalidator: 'DNI format must be correct' }
   }
 
 
@@ -123,8 +125,16 @@ export class RegisterComponent {
       await Swal.fire('New employeer', 'Welcame with us!', 'success');
 
       this.router.navigate(['/home'])
+      const response = await this.usersService.register(this.formulary.value)
+      if (response.fatal) {
+        await Swal.fire('Error creating new employee', '', 'error');
+      } else {
+        await Swal.fire('New employeer', 'Welcame with us!', 'success');
+      }
+
+      this.router.navigate(['/administration'])
     } catch (error) {
-      console.log(error)
+      await Swal.fire('Error creating new employee', '', 'error');
     }
   }
 
@@ -135,4 +145,3 @@ export class RegisterComponent {
 
 }
 
-//TODO: ALERT Y VALIDADORES

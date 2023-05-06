@@ -5,6 +5,7 @@
 
 p{
     color: white;
+   
 }
 
 h4{
@@ -13,4 +14,34 @@ h4{
 
 h3{
     color: white;
+}
+
+i{
+    font-size: 3rem;
+    padding: 20px;
+    cursor: pointer;
+}
+
+button{
+    margin: 20px;
+}
+
+.container{
+    margin-top: 40px;
+}
+
+strong{
+    font-weight: 500;
+    color: rgb(237, 225, 174);
+  
+}
+
+.mechanic{
+    margin: auto;
+    margin-right: 20px;
+    text-align: center;
+}
+
+h5{
+    padding: 20px;
 }
