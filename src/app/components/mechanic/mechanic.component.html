@@ -64,7 +64,7 @@
                                 <td>{{reparation.type}}</td>
                                 <td>{{reparation.reparation}}</td>
                                 <td>{{reparation.price}}€</td>              
-                                <button>Send</button>
+                                <button [routerLink]="['/reparations/edit', reparation.id]">Edit</button>
                             </tr>
                         </tbody>
                     </table>

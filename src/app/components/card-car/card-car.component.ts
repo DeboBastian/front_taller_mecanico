@@ -66,6 +66,7 @@ export class CardCarComponent {
       await this.carsService.deleteById(indice)
       try {
         this.car = await this.carsService.getAllCars()
+        this.router.navigate(['cars/']);
       } catch (error) {
         console.log(error)
       }

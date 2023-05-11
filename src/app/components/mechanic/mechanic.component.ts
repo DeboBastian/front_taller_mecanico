@@ -22,5 +22,12 @@ export class MechanicComponent {
     this.reparations = await this.reparationsService.getAllReparations();
   }
 
+  // async updateReparation(reparations: Reparation) {
+  //   const confirmed = confirm(`Repair updated successfully`);
+  //   if (confirmed && reparations.id != undefined) {
+  //     await this.reparationsService.updateReparation(reparation.id);
+  //   }
+  // }
+
 
 }

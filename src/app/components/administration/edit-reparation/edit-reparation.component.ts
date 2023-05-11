@@ -55,8 +55,7 @@ export class EditReparationComponent {
       
       this.router.navigate(['/reparations'])
     })
-
-    
+ 
   }
 
 

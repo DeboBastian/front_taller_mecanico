@@ -20,8 +20,6 @@ export class ReparationsComponent {
     this.reparations = []
   }
 
-
-
   async ngOnInit() {
     try {
       const reparations = await this.reparationsService.getAllReparations();
